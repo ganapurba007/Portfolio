@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <img
-            src="/public/img/icon.webp"
+            src="/img/icon.webp"
             class="size-16 object-contain"
             alt="icon_gp"
           />
@@ -181,6 +181,7 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
     <div v-if="isOpen" class="lg:hidden bg-white shadow-lg border-t">
       <ul class="flex flex-col p-6 gap-4 font-medium">
         <li
@@ -195,13 +196,13 @@ onBeforeUnmount(() => {
           :key="item"
         >
           <a
-            href="#"
-            @click="isOpen = false"
+            :href="`#${item}`"
+            @click.prevent="scrollToSection(item)"
             :class="[
-              'capitalize',
+              'capitalize transition duration-300',
               activeSection === item
                 ? 'text-indigo-600 font-semibold'
-                : 'text-slate-700',
+                : 'text-slate-700 hover:text-indigo-600',
             ]"
           >
             {{ item }}
