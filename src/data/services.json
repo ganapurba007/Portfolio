@@ -1,0 +1,19 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Landing Page Development",
+      "description": "Modern, responsive landing pages designed to communicate your value clearly and convert visitors into customers."
+    },
+    {
+      "id": 2,
+      "title": "Web Application Development",
+      "description": "Scalable and maintainable web applications built to streamline operations and support business growth."
+    },
+    {
+      "id": 3,
+      "title": "Backend & API Development",
+      "description": "Robust backend systems and RESTful APIs designed for performance, security, and long-term scalability."
+    }
+  ]
+}
