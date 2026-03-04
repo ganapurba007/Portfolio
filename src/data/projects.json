@@ -6,7 +6,7 @@
       "link": "https://mmkjogja.net/e-procurement",
       "description": "A web-based procurement management system designed to streamline vendor registration, tender management, and document tracking processes. The platform improves transparency, efficiency, and workflow automation.",
       "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
-      "image": "/img/project/eprocurement.png"
+      "image": "/img/project/eprocurement.webp"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "link": "https://esetda.penajamkab.go.id/sirutama",
       "description": "A web-based reservation system developed for the Penajam local government to manage bookings for meeting rooms, guest houses, and official accommodations. The system enhances scheduling efficiency and resource management.",
       "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
-      "image": "/img/project/sirutama.png"
+      "image": "/img/project/sirutama.webp"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "link": "https://simpkk.penajamkab.go.id/",
       "description": "A centralized information system designed to manage and maintain member and volunteer data for the Family Empowerment and Welfare organization, from regional to national levels. The platform ensures accurate data recording and reporting.",
       "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
-      "image": "/img/project/simpkk.png"
+      "image": "/img/project/simpkk.webp"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "link": "https://mmkjogja.net/sinata/sinata",
       "description": "A web-based visitor management system created for a regional government office to handle guest visit reservations efficiently. The system simplifies appointment scheduling and improves administrative coordination.",
       "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
-      "image": "/img/project/sinata.png"
+      "image": "/img/project/sinata.webp"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "link": "https://yesjogja.net/simparpora_boven_digoel/",
       "description": "An official website developed to provide the public with information about youth and sports activities in Boven Digoel Regency, including news, galleries, announcements, and other related updates.",
       "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
-      "image": "/img/project/simparpora.png"
+      "image": "/img/project/simparpora.webp"
     }
   ]
 }

@@ -67,7 +67,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
           class="w-[420px] h-[420px] rounded-2xl shadow-xl overflow-hidden border border-slate-200"
         >
           <img
-            src="/img/gana1.jpeg"
+            src="/img/gana1.webp"
             alt="Project Preview"
             class="w-full h-full object-cover hover:scale-105 transition duration-700"
           />
