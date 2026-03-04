@@ -18,6 +18,7 @@ const snippet = computed(() => {
     <!-- Image -->
     <div class="relative overflow-hidden">
       <img
+        loading="lazy"
         :src="project.image"
         :alt="project.title"
         class="w-full h-56 object-cover transition duration-700 group-hover:scale-110"
