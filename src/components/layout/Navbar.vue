@@ -120,7 +120,7 @@ onBeforeUnmount(() => {
         <!-- Logo -->
         <div class="flex items-center gap-3">
           <img
-            src="/public/img/icon.png"
+            src="/public/img/icon.webp"
             class="size-16 object-contain"
             alt="icon_gp"
           />
