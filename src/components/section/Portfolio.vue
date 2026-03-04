@@ -4,7 +4,7 @@ import Project from "../layout/Project.vue";
 </script>
 
 <template>
-  <section id="portfolio" class="relative py-24 bg-slate-100 overflow-hidden">
+  <section id="portfolio" class="relative py-24 bg-slate-200 overflow-hidden">
     <!-- Background Decoration -->
     <div
       class="absolute -top-32 -left-32 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-40"

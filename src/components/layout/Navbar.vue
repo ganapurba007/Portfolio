@@ -170,7 +170,13 @@ onBeforeUnmount(() => {
         </ul>
 
         <!-- Mobile Button -->
-        <button @click="isOpen = !isOpen" class="lg:hidden text-2xl">☰</button>
+        <button
+          @click="isOpen = !isOpen"
+          class="lg:hidden text-2xl"
+          aria-label="buttonHamburger"
+        >
+          ☰
+        </button>
       </div>
     </div>
 

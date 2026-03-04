@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section id="about" class="relative py-24 bg-slate-100 overflow-hidden">
+  <section id="about" class="relative py-24 bg-slate-200 overflow-hidden">
     <!-- Background Accent -->
     <div
       class="absolute -bottom-32 -left-32 w-96 h-96 bg-orange-300 blur-3xl opacity-20"

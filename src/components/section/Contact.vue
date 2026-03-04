@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section id="contact" class="py-24 bg-slate-100">
+  <section id="contact" class="py-24 bg-slate-200">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <!-- Header -->
       <h2 class="text-4xl font-bold text-slate-900">Let’s Connect</h2>
