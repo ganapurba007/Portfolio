@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <section id="cta" class="py-24 bg-slate-900 text-white">
+  <section id="cta" class="py-12 bg-slate-900 text-white">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <h2 class="text-4xl font-bold leading-tight">
         Let’s Build Something Great Together

@@ -1,13 +1,23 @@
 <script setup></script>
 
 <template>
-  <section id="work" class="py-24 bg-white">
+  <section id="work" class="py-10 bg-white">
     <div class="max-w-5xl mx-auto px-6">
       <!-- Title -->
       <div class="text-center">
-        <h2 class="text-4xl font-bold text-slate-900">Work Experience</h2>
-        <div class="w-20 h-1 bg-indigo-600 mx-auto mt-6 rounded-full"></div>
-        <p class="text-slate-500 mt-6 leading-relaxed">
+        <div class="flex justify-center items-center gap-3 mb-3">
+          <div class="w-10 h-[2px] bg-indigo-600"></div>
+          <p class="text-sm uppercase tracking-widest text-slate-500">
+            Experience
+          </p>
+          <div class="w-10 h-[2px] bg-indigo-600"></div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-slate-900">
+          Work <span class="text-indigo-600">Experience</span>
+        </h2>
+
+        <p class="mt-3 text-slate-600 max-w-lg mx-auto text-sm">
           Real-world experience building systems that support business
           operations and growth.
         </p>

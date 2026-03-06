@@ -137,7 +137,8 @@ onBeforeUnmount(() => {
             v-for="item in [
               'home',
               'about',
-              'services',
+              // 'services',
+              'skills',
               'portfolio',
               'work',
               'contact',
@@ -188,7 +189,8 @@ onBeforeUnmount(() => {
           v-for="item in [
             'home',
             'about',
-            'services',
+            // 'services',
+            'skills',
             'portfolio',
             'work',
             'contact',

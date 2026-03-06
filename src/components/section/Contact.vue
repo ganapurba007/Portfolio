@@ -6,17 +6,27 @@ import WhatsappIcon from "../Icon/WhatsappIcon.vue";
 </script>
 
 <template>
-  <section id="contact" class="py-24 bg-slate-200">
+  <section id="contact" class="py-10 bg-slate-200">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <!-- Header -->
-      <h2 class="text-4xl font-bold text-slate-900">Let’s Connect</h2>
+      <div class="text-center">
+        <div class="flex justify-center items-center gap-3 mb-3">
+          <div class="w-10 h-[2px] bg-indigo-600"></div>
+          <p class="text-sm uppercase tracking-widest text-slate-500">
+            Contact
+          </p>
+          <div class="w-10 h-[2px] bg-indigo-600"></div>
+        </div>
 
-      <div class="w-20 h-1 bg-indigo-600 mx-auto mt-6 rounded-full"></div>
+        <h2 class="text-3xl font-bold text-slate-900">
+          Let's <span class="text-indigo-600">Connect</span>
+        </h2>
 
-      <p class="text-slate-500 mt-6 leading-relaxed max-w-xl mx-auto">
-        I'm open to freelance opportunities, collaborations, or professional
-        discussions.
-      </p>
+        <p class="mt-3 text-slate-600 max-w-lg mx-auto text-sm">
+          I'm open to freelance opportunities, collaborations, or professional
+          discussions.
+        </p>
+      </div>
 
       <!-- Contact Grid -->
       <div class="mt-16 grid md:grid-cols-2 gap-8 text-left">
