@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import BootstrapIcon from "../Icon/BootstrapIcon.vue";
+import CodeigniterIcon from "../Icon/CodeigniterIcon.vue";
+import LaravelIcon from "../Icon/LaravelIcon.vue";
+import ReactIcon from "../Icon/ReactIcon.vue";
+import TailwindIcon from "../Icon/TailwindIcon.vue";
+import VueIcon from "../Icon/VueIcon.vue";
+import MysqlIcon from "../Icon/MysqlIcon.vue";
+import GitIcon from "../Icon/GitIcon.vue";
+</script>
 
 <template>
   <section id="about" class="relative py-24 bg-slate-200 overflow-hidden">
@@ -56,44 +65,158 @@
 
         <!-- Right Card -->
         <div
-          class="relative bg-white p-8 rounded-2xl shadow-xl border border-slate-200 space-y-6 hover:-translate-y-2 transition duration-500"
+          class="relative bg-gradient-to-br from-white to-slate-50 p-8 rounded-2xl shadow-xl border border-slate-200 space-y-10 overflow-hidden"
         >
+          <!-- Glow Decoration -->
+          <div
+            class="absolute -top-16 -right-16 w-48 h-48 bg-orange-300 opacity-20 blur-3xl rounded-full"
+          ></div>
+
+          <!-- Frontend -->
           <div>
-            <h3 class="font-semibold text-slate-900 mb-1">Frontend</h3>
-            <div class="flex flex-wrap gap-2 mt-2">
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >Vue js</span
+            <h3
+              class="font-semibold text-slate-900 text-lg mb-4 flex items-center gap-2"
+            >
+              <span class="w-1.5 h-6 bg-orange-400 rounded"></span>
+              Frontend
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >Tailwind</span
+                <VueIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#4FC08D]"
+                />
+                <span class="text-xs text-slate-600 font-medium">Vue</span>
+              </div>
+
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >React js</span
+                <TailwindIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#06B6D4]"
+                />
+                <span class="text-xs text-slate-600 font-medium">Tailwind</span>
+              </div>
+
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
+                <BootstrapIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#7952B3]"
+                />
+                <span class="text-xs text-slate-600 font-medium"
+                  >Bootstrap</span
+                >
+              </div>
+
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
+              >
+                <ReactIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#61DAFB]"
+                />
+                <span class="text-xs text-slate-600 font-medium">React</span>
+              </div>
             </div>
           </div>
 
+          <!-- Backend -->
           <div>
-            <h3 class="font-semibold text-slate-900 mb-1">Backend</h3>
-            <div class="flex flex-wrap gap-2 mt-2">
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >Codeigniter</span
+            <h3
+              class="font-semibold text-slate-900 text-lg mb-4 flex items-center gap-2"
+            >
+              <span class="w-1.5 h-6 bg-indigo-400 rounded"></span>
+              Backend
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >Laravel</span
+                <CodeigniterIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#EF4223]"
+                />
+                <span class="text-xs text-slate-600 font-medium"
+                  >CodeIgniter</span
+                >
+              </div>
+
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full"
-                >REST API</span
+                <LaravelIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#FF2D20]"
+                />
+                <span class="text-xs text-slate-600 font-medium">Laravel</span>
+              </div>
+
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
               >
+                <GitIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#F05032]"
+                />
+                <span class="text-xs text-slate-600 font-medium">Git</span>
+              </div>
+
+              <div
+                class="flex items-center justify-center text-xs bg-slate-100 px-3 py-3 rounded-xl font-medium hover-skills"
+              >
+                REST API
+              </div>
             </div>
           </div>
 
+          <!-- Database -->
           <div>
-            <h3 class="font-semibold text-slate-900 mb-1">Database</h3>
-            <div class="flex flex-wrap gap-2 mt-2">
-              <span class="px-3 py-1 text-xs bg-slate-100 rounded-full">
-                MySQL
-              </span>
+            <h3
+              class="font-semibold text-slate-900 text-lg mb-4 flex items-center gap-2"
+            >
+              <span class="w-1.5 h-6 bg-blue-400 rounded"></span>
+              Database
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div
+                class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-slate-100 hover-skills"
+              >
+                <MysqlIcon
+                  class="text-3xl text-slate-700 group-hover:text-[#4479A1]"
+                />
+                <span class="text-xs text-slate-600 font-medium">MySQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div>
+            <h3
+              class="font-semibold text-slate-900 text-lg mb-4 flex items-center gap-2"
+            >
+              <span class="w-1.5 h-6 bg-emerald-400 rounded"></span>
+              Tools
+            </h3>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div
+                class="flex items-center justify-center text-xs bg-slate-100 px-4 py-3 rounded-xl font-medium hover-skills"
+              >
+                GitHub
+              </div>
+
+              <div
+                class="flex items-center justify-center text-xs bg-slate-100 px-4 py-3 rounded-xl font-medium hover-skills"
+              >
+                Postman
+              </div>
+
+              <div
+                class="flex items-center justify-center text-xs bg-slate-100 px-4 py-3 rounded-xl font-medium hover-skills"
+              >
+                VS Code
+              </div>
             </div>
           </div>
         </div>

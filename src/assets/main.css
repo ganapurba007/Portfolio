@@ -20,6 +20,27 @@
   @apply text-white bg-purple-500 rounded-lg px-4 py-3 transition-colors duration-200;
 }
 
+/* @utility hover-skills {
+  @apply relative overflow-hidden
+  transition-all duration-300 ease-out
+  hover:scale-105
+  hover:-translate-y-1
+  hover:bg-white
+  hover:shadow-xl
+  hover:ring-1 hover:ring-slate-300;
+} */
+
+@utility hover-skills {
+  @apply relative
+  transition-all duration-300 ease-out
+  hover:scale-105
+  hover:-translate-y-1
+  hover:bg-gradient-to-br hover:from-slate-100 hover:to-white
+  hover:shadow-xl
+  hover:border-slate-300
+  hover:ring-2 hover:ring-orange-200;
+}
+
 html {
   scroll-behavior: smooth;
 }

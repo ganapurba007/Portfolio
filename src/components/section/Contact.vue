@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import EmailIcon from "../Icon/EmailIcon.vue";
+import GithubIcon from "../Icon/GithubIcon.vue";
+import LinkedinIcon from "../Icon/LinkedinIcon.vue";
+import WhatsappIcon from "../Icon/WhatsappIcon.vue";
+</script>
 
 <template>
   <section id="contact" class="py-24 bg-slate-200">
@@ -18,9 +23,9 @@
         <!-- Email -->
         <a
           href="mailto:ganapurbakusuma86@gmail.com"
-          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-4"
         >
-          <p class="text-sm text-slate-400 mb-2">Email</p>
+          <EmailIcon class="text-[#EA4335]" />
           <p class="text-lg font-medium text-slate-900">
             ganapurbakusuma86@gmail.com
           </p>
@@ -30,9 +35,9 @@
         <a
           href="https://www.linkedin.com/in/ganapurba/"
           target="_blank"
-          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-4"
         >
-          <p class="text-sm text-slate-400 mb-2">LinkedIn</p>
+          <LinkedinIcon />
           <p class="text-lg font-medium text-slate-900">
             linkedin.com/in/ganapurba
           </p>
@@ -42,9 +47,9 @@
         <a
           href="https://github.com/ganapurba007"
           target="_blank"
-          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-4"
         >
-          <p class="text-sm text-slate-400 mb-2">GitHub</p>
+          <GithubIcon class="text-[#181717]" />
           <p class="text-lg font-medium text-slate-900">
             github.com/ganapurba007
           </p>
@@ -54,9 +59,9 @@
         <a
           href="https://wa.me/6285786257585"
           target="_blank"
-          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          class="p-6 bg-white border border-slate-200 rounded-2xl hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center gap-4"
         >
-          <p class="text-sm text-slate-400 mb-2">WhatsApp</p>
+          <WhatsappIcon class="text-[#25D366]" />
           <p class="text-lg font-medium text-slate-900">+62 857 8625 7585</p>
         </a>
       </div>
