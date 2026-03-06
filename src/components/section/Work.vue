@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section id="work" class="py-10 bg-white">
+  <section id="work" class="py-24 bg-white">
     <div class="max-w-5xl mx-auto px-6">
       <!-- Title -->
       <div class="text-center">

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 <template>
   <section
     id="home"
-    class="relative min-h-screen flex items-center overflow-hidden bg-white py-16 md:py-10"
+    class="relative min-h-screen flex items-center overflow-hidden bg-white py-10 md:py-6"
   >
     <!-- Background Accent -->
     <div

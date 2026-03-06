@@ -14,12 +14,7 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
 </script>
 
 <template>
-  <section id="skills" class="relative py-10 overflow-hidden">
-    <!-- Background Accent -->
-    <div
-      class="absolute -top-32 -right-32 w-96 h-96 bg-indigo-300 blur-3xl opacity-20"
-    ></div>
-
+  <section id="skills" class="relative py-24 overflow-hidden">
     <div class="relative z-10 max-w-6xl mx-auto px-6">
       <!-- Header -->
       <div class="mb-10 text-center">

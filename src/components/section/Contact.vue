@@ -6,7 +6,7 @@ import WhatsappIcon from "../Icon/WhatsappIcon.vue";
 </script>
 
 <template>
-  <section id="contact" class="py-10 bg-slate-200">
+  <section id="contact" class="py-24 bg-slate-200">
     <div class="max-w-5xl mx-auto px-6 text-center">
       <!-- Header -->
       <div class="text-center">
