@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 <template>
   <section
     id="home"
-    class="relative min-h-screen flex items-center overflow-hidden bg-white py-10 md:py-6"
+    class="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-slate-900 py-10 md:py-6"
   >
     <!-- Background Accent -->
     <div
@@ -23,33 +23,37 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
         <div
           class="flex items-center justify-center lg:justify-start gap-3 mb-6"
         >
-          <div class="w-12 h-[2px] bg-indigo-600"></div>
-          <p class="text-md uppercase tracking-widest text-slate-500">
+          <div class="w-12 h-[2px] bg-indigo-600 dark:bg-white"></div>
+          <p
+            class="text-md uppercase tracking-widest text-slate-500 :dark:text-slate-200"
+          >
             Fullstack Web Developer
           </p>
         </div>
 
-        <h1 class="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
+        <h1
+          class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 leading-tight"
+        >
           Hi, I'm Gana — <br />
           I build fast, modern web solutions.
         </h1>
 
         <p
-          class="mt-6 text-base md:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          class="mt-6 text-base md:text-lg text-slate-600 :dark:text-red-900 max-w-xl mx-auto lg:mx-0 leading-relaxed"
         >
           I help startups and small businesses launch modern landing pages and
           scalable web applications quickly — with clean code, clear
           communication, and no unnecessary complexity.
         </p>
 
-        <p class="mt-6 text-sm text-slate-500">
+        <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
           🚀 Fast delivery • 💬 Clear communication • 🌍 Available worldwide
         </p>
 
         <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
           <a
             href="#portfolio"
-            class="px-6 py-3 bg-slate-900 text-white rounded-lg shadow hover:bg-slate-800 transition"
+            class="px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-lg shadow hover:bg-slate-800 transition"
           >
             View Projects
           </a>
@@ -57,7 +61,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
           <a
             href="https://drive.google.com/file/d/1ryjbf4DOpIZCdyxMdEouCheDOubRZxNT/view?usp=sharing"
             target="_blank"
-            class="px-6 py-3 border border-slate-300 rounded-lg hover:bg-slate-100 transition"
+            class="px-6 py-3 border border-slate-300 rounded-lg hover:bg-slate-100 transition dark:bg-slate-800 dark:text-white dark:border-slate-600"
           >
             <FontAwesomeIcon :icon="['fas', 'download']" class="mr-2" />
             Download CV

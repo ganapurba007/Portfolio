@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
+import DarkMode from "../Icon/DarkMode.vue";
 
 const activeSection = ref("home");
 const isScrolled = ref(false);
@@ -112,7 +113,9 @@ onBeforeUnmount(() => {
   <nav
     :class="[
       'fixed w-full z-50 transition-all duration-300',
-      isScrolled ? 'bg-white/80 backdrop-blur-md shadow-md' : 'bg-transparent',
+      isScrolled
+        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-md'
+        : 'bg-transparent',
     ]"
   >
     <div class="max-w-6xl mx-auto px-5">
@@ -124,14 +127,16 @@ onBeforeUnmount(() => {
             class="size-16 object-contain"
             alt="icon_gp"
           />
+
           <h1
-            class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 bg-clip-text text-transparent"
+            class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 dark:from-indigo-400 dark:via-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent"
           >
             Gana Purba
           </h1>
         </div>
 
         <!-- Desktop Menu -->
+
         <ul class="hidden lg:flex gap-10 font-medium text-sm">
           <li
             v-for="item in [
@@ -150,8 +155,8 @@ onBeforeUnmount(() => {
               :class="[
                 'relative capitalize transition duration-300',
                 activeSection === item
-                  ? 'text-indigo-600'
-                  : 'text-slate-700 hover:text-indigo-600',
+                  ? 'text-slate-600 dark:text-slate-200'
+                  : 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400',
               ]"
               @click.prevent="scrollToSection(item)"
             >
@@ -162,28 +167,36 @@ onBeforeUnmount(() => {
                 :class="[
                   'absolute left-0 -bottom-1 h-[2px] w-full transition-transform duration-300 origin-left',
                   activeSection === item
-                    ? 'bg-indigo-600 scale-x-100'
-                    : 'bg-indigo-600 scale-x-0 group-hover:scale-x-100',
+                    ? 'bg-indigo-600 dark:bg-indigo-400 scale-x-100'
+                    : 'bg-indigo-600 dark:bg-indigo-400 scale-x-0 group-hover:scale-x-100',
                 ]"
               ></span>
             </a>
           </li>
+          <li>
+            <DarkMode class="max-lg:hidden" />
+          </li>
         </ul>
 
         <!-- Mobile Button -->
-        <button
-          @click="isOpen = !isOpen"
-          class="lg:hidden text-2xl"
-          aria-label="buttonHamburger"
-        >
-          ☰
-        </button>
+        <div class="flex items-center gap-5">
+          <DarkMode class="lg:hidden" />
+          <button
+            @click="isOpen = !isOpen"
+            class="lg:hidden text-2xl text-slate-900 dark:text-indigo-200"
+            aria-label="buttonHamburger"
+          >
+            ☰
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- Mobile Menu -->
-    <!-- Mobile Menu -->
-    <div v-if="isOpen" class="lg:hidden bg-white shadow-lg border-t">
+    <div
+      v-if="isOpen"
+      class="lg:hidden bg-white dark:bg-slate-900 shadow-lg border-t"
+    >
       <ul class="flex flex-col p-6 gap-4 font-medium">
         <li
           v-for="item in [
@@ -203,8 +216,8 @@ onBeforeUnmount(() => {
             :class="[
               'capitalize transition duration-300',
               activeSection === item
-                ? 'text-indigo-600 font-semibold'
-                : 'text-slate-700 hover:text-indigo-600',
+                ? 'text-indigo-600 dark:text-indigo-400 font-semibold'
+                : 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400',
             ]"
           >
             {{ item }}
