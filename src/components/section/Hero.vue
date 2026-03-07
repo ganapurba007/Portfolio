@@ -39,14 +39,14 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
         </h1>
 
         <p
-          class="mt-6 text-base md:text-lg text-slate-600 :dark:text-red-900 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          class="mt-6 text-base md:text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
         >
           I help startups and small businesses launch modern landing pages and
           scalable web applications quickly — with clean code, clear
           communication, and no unnecessary complexity.
         </p>
 
-        <p class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+        <p class="mt-6 text-md text-slate-500 dark:text-slate-400">
           🚀 Fast delivery • 💬 Clear communication • 🌍 Available worldwide
         </p>
 
