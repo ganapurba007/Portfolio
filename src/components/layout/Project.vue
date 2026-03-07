@@ -13,7 +13,7 @@ const snippet = computed(() => {
 
 <template>
   <div
-    class="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+    class="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden"
   >
     <!-- Image -->
     <div class="relative overflow-hidden">
@@ -36,7 +36,7 @@ const snippet = computed(() => {
         <span
           v-for="stack in project.stacks"
           :key="stack"
-          class="text-xs bg-slate-100 text-slate-600 px-2 py-1 rounded-full font-medium"
+          class="text-xs bg-slate-500 dark:bg-slate-200 text-slate-200 dark:text-slate-800 px-2 py-1 rounded-full font-medium"
         >
           {{ stack }}
         </span>
@@ -44,13 +44,15 @@ const snippet = computed(() => {
 
       <!-- Title -->
       <h3
-        class="text-lg font-semibold text-slate-900 mb-3 group-hover:text-indigo-600 transition"
+        class="text-lg font-semibold text-slate-900 dark:text-slate-100 mb-3 group-hover:text-indigo-600 transition dark:group-hover:text-indigo-400"
       >
         {{ project.title }}
       </h3>
 
       <!-- Description -->
-      <p class="text-sm text-slate-600 leading-relaxed text-justify">
+      <p
+        class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed text-justify"
+      >
         {{ snippet }}
       </p>
 
@@ -59,7 +61,7 @@ const snippet = computed(() => {
         :href="project.link"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-indigo-600 hover:gap-3 transition-all"
+        class="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:gap-3 transition-all"
       >
         View Case Study
         <FontAwesomeIcon icon="fa-solid fa-arrow-right" />

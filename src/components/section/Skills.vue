@@ -101,9 +101,11 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
         <!-- BACKEND -->
         <div>
           <h3
-            class="font-semibold text-slate-900 mb-3 flex items-center gap-2 text-lg"
+            class="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2 text-lg"
           >
-            <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
+            <span
+              class="w-2 h-2 rounded-full bg-indigo-400 dark:bg-indigo-300"
+            ></span>
             Backend
           </h3>
 
