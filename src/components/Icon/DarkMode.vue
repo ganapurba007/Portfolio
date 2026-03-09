@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-const isDark = ref(false);
+const isDark = ref(true);
 const textMode = ref("Light Mode");
 function toggleClick() {
   document.documentElement.classList.toggle("dark", isDark.value);
