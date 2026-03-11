@@ -59,7 +59,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1ryjbf4DOpIZCdyxMdEouCheDOubRZxNT/view?usp=sharing"
+            href="https://drive.google.com/file/d/1g-oj9KHDeNgQyG3LL4TbMqAR-rE1Fjng/view?usp=sharing"
             target="_blank"
             class="px-6 py-3 border border-slate-300 rounded-lg hover:bg-slate-100 transition dark:bg-slate-800 dark:text-white dark:border-slate-600"
           >
