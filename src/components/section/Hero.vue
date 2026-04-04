@@ -1,5 +1,22 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
+const isVisible = ref(false);
+
+onMounted(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        isVisible.value = true;
+      }
+    },
+    { threshold: 0.2 },
+  );
+
+  const el = document.querySelector("#home");
+  if (el) observer.observe(el);
+});
 </script>
 
 <template>
@@ -24,11 +41,13 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
           class="flex items-center justify-center lg:justify-start gap-3 mb-6"
         >
           <div class="w-12 h-[2px] bg-indigo-600 dark:bg-white"></div>
-          <p
-            class="text-md uppercase tracking-widest text-slate-500 :dark:text-slate-200"
-          >
-            Fullstack Web Developer
-          </p>
+          <Transition>
+            <p
+              class="text-md uppercase tracking-widest text-slate-500 :dark:text-slate-200"
+            >
+              Fullstack Web Developer
+            </p>
+          </Transition>
         </div>
 
         <h1
@@ -59,7 +78,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1g-oj9KHDeNgQyG3LL4TbMqAR-rE1Fjng/view?usp=sharing"
+            href="https://drive.google.com/file/d/1apWZbdxmbnTL0ejNmAWvFdJYha5iLCcG/view?usp=sharing"
             target="_blank"
             class="px-6 py-3 border border-slate-300 rounded-lg hover:bg-slate-100 transition dark:bg-slate-800 dark:text-white dark:border-slate-600"
           >
