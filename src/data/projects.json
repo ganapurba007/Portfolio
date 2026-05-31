@@ -6,7 +6,7 @@
       "link": "https://ganahris.infinityfree.me/",
       "description": "A comprehensive Human Resource Information System that streamlines employee management, payroll processing, task distribution, and leave management. Built with a multi-role access system to ensure secure and efficient workflows, using Laravel, Bootstrap, and JavaScript.",
       "stacks": ["Laravel", "Bootstrap", "JavaScript"],
-      "image": "/img/project/hris.png"
+      "image": "/img/project/hris.webp"
     },
     {
       "id": 2,
