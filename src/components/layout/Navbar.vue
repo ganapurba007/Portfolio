@@ -112,7 +112,7 @@ onBeforeUnmount(() => {
 <template>
   <nav
     :class="[
-      'fixed w-full z-50 transition-all duration-300',
+      'fixed top-0 w-full z-50 h-20 transition-all duration-300 dark:bg-slate-900',
       isScrolled
         ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-md'
         : 'bg-transparent',
@@ -124,8 +124,8 @@ onBeforeUnmount(() => {
         <div class="flex items-center gap-3">
           <img
             src="/img/icon.webp"
-            class="size-16 object-contain"
             alt="icon_gp"
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain"
           />
 
           <h1

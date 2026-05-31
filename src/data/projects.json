@@ -2,6 +2,22 @@
   "projects": [
     {
       "id": 1,
+      "title": "Human Resource Information System",
+      "link": "https://ganahris.infinityfree.me/",
+      "description": "A comprehensive Human Resource Information System that streamlines employee management, payroll processing, task distribution, and leave management. Built with a multi-role access system to ensure secure and efficient workflows, using Laravel, Bootstrap, and JavaScript.",
+      "stacks": ["Laravel", "Bootstrap", "JavaScript"],
+      "image": "/img/project/hris.png"
+    },
+    {
+      "id": 2,
+      "title": "Portfolio",
+      "link": "https://ganapurba.vercel.app",
+      "description": "A modern personal portfolio website designed to present development skills, projects, and professional experience. Built with Vue.js, Tailwind CSS, and JavaScript, featuring a responsive and minimalist UI for optimal user experience.",
+      "stacks": ["Vue JS", "Tailwind", "JavaScript"],
+      "image": "/img/project/portfolio.webp"
+    },
+    {
+      "id": 3,
       "title": "E-Procurement System",
       "link": "https://mmkjogja.net/e-procurement",
       "description": "A web-based procurement management system designed to streamline vendor registration, tender management, and document tracking processes. The platform improves transparency, efficiency, and workflow automation.",
@@ -9,7 +25,7 @@
       "image": "/img/project/eprocurement.webp"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "Sirutama",
       "link": "https://esetda.penajamkab.go.id/sirutama",
       "description": "A web-based reservation system developed for the Penajam local government to manage bookings for meeting rooms, guest houses, and official accommodations. The system enhances scheduling efficiency and resource management.",
@@ -17,7 +33,7 @@
       "image": "/img/project/sirutama.webp"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "SIM PKK PPU",
       "link": "https://simpkk.penajamkab.go.id/",
       "description": "A centralized information system designed to manage and maintain member and volunteer data for the Family Empowerment and Welfare organization, from regional to national levels. The platform ensures accurate data recording and reporting.",
@@ -25,7 +41,7 @@
       "image": "/img/project/simpkk.webp"
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "Sinata",
       "link": "https://mmkjogja.net/sinata/sinata",
       "description": "A web-based visitor management system created for a regional government office to handle guest visit reservations efficiently. The system simplifies appointment scheduling and improves administrative coordination.",
@@ -33,7 +49,7 @@
       "image": "/img/project/sinata.webp"
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "Simparpora Boven Digoel",
       "link": "https://yesjogja.net/simparpora_boven_digoel/",
       "description": "An official website developed to provide the public with information about youth and sports activities in Boven Digoel Regency, including news, galleries, announcements, and other related updates.",

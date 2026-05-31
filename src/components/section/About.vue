@@ -3,75 +3,125 @@
 <template>
   <section
     id="about"
-    class="relative py-24 bg-slate-200 dark:bg-slate-800 overflow-hidden"
+    class="relative py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden"
   >
-    <!-- Background Accent -->
+    <!-- Background Blur -->
     <div
-      class="absolute -bottom-32 -left-32 w-96 h-96 bg-orange-300 dark:bg-orange-400 blur-3xl opacity-20"
+      class="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] bg-indigo-500/10 blur-3xl rounded-full"
     ></div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <!-- HEADER -->
-      <div class="mb-14">
-        <div class="flex justify-center items-center gap-3 mb-4">
-          <div class="w-12 h-[2px] bg-indigo-600 dark:bg-white"></div>
-          <p
-            class="text-md uppercase tracking-widest text-slate-500 dark:text-slate-400"
+    <div
+      class="absolute -top-40 -right-40 w-[30rem] h-[30rem] bg-orange-500/10 blur-3xl rounded-full"
+    ></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Label -->
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <div class="w-12 h-[2px] bg-indigo-600"></div>
+
+          <span
+            class="uppercase tracking-[0.3em] text-xs font-semibold text-slate-500 dark:text-slate-400"
           >
             About Me
-          </p>
-          <div class="w-12 h-[2px] bg-indigo-600 dark:bg-white"></div>
+          </span>
+
+          <div class="w-12 h-[2px] bg-indigo-600"></div>
         </div>
 
+        <!-- Heading -->
         <h2
-          class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 leading-tight"
+          class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 dark:text-white"
         >
-          Helping Startups Build
-          <span class="text-indigo-600 dark:text-indigo-400"
-            >Reliable & Scalable</span
+          Building Digital Solutions
+
+          <span
+            class="block mt-2 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent"
           >
-          Web Solutions
+            That Create Real Impact
+          </span>
         </h2>
+
+        <!-- Description -->
+        <p
+          class="mt-8 text-lg md:text-xl leading-relaxed text-slate-600 dark:text-slate-400"
+        >
+          I am a
+          <span class="font-semibold text-indigo-600">
+            Fullstack Web Developer
+          </span>
+          with experience in developing business applications, information
+          systems, and digital platforms that help organizations improve
+          efficiency, productivity, and user engagement.
+        </p>
+
+        <p
+          class="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+        >
+          Beyond coding, I enjoy solving complex problems, collaborating with
+          teams, and continuously learning new technologies to build scalable,
+          reliable, and impactful digital solutions.
+        </p>
       </div>
 
-      <!-- ABOUT TEXT -->
-      <div class="max-w-3xl text-xl">
-        <p
-          class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 text-justify"
+      <!-- Stats -->
+      <div
+        class="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16 max-w-5xl mx-auto"
+      >
+        <div
+          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
         >
-          I'm a fullstack developer who enjoys turning ideas into functional and
-          user-friendly web applications. I work closely with clients to
-          understand their goals and deliver solutions that are practical,
-          efficient, and aligned with their business needs.
-        </p>
+          <h3
+            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          >
+            2+
+          </h3>
 
-        <p
-          class="text-slate-600 dark:text-slate-400 leading-relaxed text-justify"
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            Years Experience
+          </p>
+        </div>
+
+        <div
+          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
         >
-          From landing pages to full web platforms, I focus on building fast,
-          scalable, and maintainable systems — while keeping communication clear
-          and the development process simple.
-        </p>
+          <h3
+            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          >
+            10+
+          </h3>
 
-        <!-- STATS -->
-        <div class="flex gap-12 mt-8">
-          <div>
-            <p class="text-3xl font-bold text-slate-900 dark:text-slate-100">
-              2+
-            </p>
-            <p class="text-sm text-slate-500 dark:text-slate-400">
-              Years Experience
-            </p>
-          </div>
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            Completed Projects
+          </p>
+        </div>
 
-          <div>
-            <p class="text-3xl font-bold text-slate-900 dark:text-slate-100">
-              10+
-            </p>
-            <p class="text-sm text-slate-500 dark:text-slate-400">
-              Projects Completed
-            </p>
-          </div>
+        <div
+          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3
+            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          >
+            4+
+          </h3>
+
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            Technical Skills
+          </p>
+        </div>
+
+        <div
+          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3
+            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          >
+            100%
+          </h3>
+
+          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+            Commitment
+          </p>
         </div>
       </div>
     </div>

@@ -87,14 +87,14 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
               <span>Bootstrap</span>
             </div>
 
-            <div
+            <!-- <div
               class="group flex flex-col items-center justify-center gap-1 p-3 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs text-slate-700 dark:text-slate-400 font-medium transition hover:shadow-md hover:-translate-y-1"
             >
               <ReactIcon
                 class="text-2xl text-slate-700 group-hover:text-[#61DAFB] dark:text-slate-400 dark:group-hover:text-[#61DAFB]"
               />
               <span>React</span>
-            </div>
+            </div> -->
           </div>
         </div>
 

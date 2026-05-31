@@ -22,83 +22,120 @@ onMounted(() => {
 <template>
   <section
     id="home"
-    class="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-slate-900 py-10 md:py-6"
+    class="relative overflow-hidden bg-white dark:bg-slate-900"
   >
-    <!-- Background Accent -->
+    <!-- Background Blur -->
     <div
-      class="absolute -top-32 -right-32 w-72 md:w-96 h-72 md:h-96 bg-pink-300 blur-3xl opacity-30"
-    ></div>
-    <div
-      class="absolute bottom-0 -right-32 w-72 md:w-96 h-72 md:h-96 bg-cyan-300 blur-3xl opacity-30"
+      class="absolute -top-40 -right-40 w-80 h-80 bg-pink-300 opacity-20 blur-3xl rounded-full"
     ></div>
 
     <div
-      class="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+      class="absolute bottom-0 -left-20 w-72 h-72 bg-cyan-300 opacity-20 blur-3xl rounded-full"
+    ></div>
+
+    <div
+      class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8 lg:px-10 py-8 md:py-12 lg:min-h-[calc(100vh-80px)] grid lg:grid-cols-2 gap-10 lg:gap-16 items-center"
     >
-      <!-- LEFT -->
-      <div class="text-center lg:text-left">
+      <!-- FOTO -->
+      <div
+        class="flex justify-center order-1 lg:order-2 mt-2 sm:mt-4 lg:mt-[-110px]"
+      >
+        <div class="relative">
+          <!-- Glow -->
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 to-cyan-500/30 blur-3xl rounded-full"
+          ></div>
+
+          <!-- Image -->
+          <div
+            class="relative w-56 sm:w-72 md:w-80 lg:w-[420px] aspect-square overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 shadow-2xl"
+          >
+            <img
+              src="/img/gana1.webp"
+              alt="Gana Purba"
+              class="w-full h-full object-cover transition duration-700 hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- KONTEN -->
+      <div
+        :class="[
+          'order-2 lg:order-1 text-center lg:text-left transition-all duration-1000',
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8',
+        ]"
+      >
+        <!-- Subtitle -->
         <div
-          class="flex items-center justify-center lg:justify-start gap-3 mb-6"
+          class="flex items-center justify-center lg:justify-start gap-3 mb-5"
         >
-          <div class="w-12 h-[2px] bg-indigo-600 dark:bg-white"></div>
-          <Transition>
-            <p
-              class="text-md uppercase tracking-widest text-slate-500 :dark:text-slate-200"
-            >
-              Fullstack Web Developer
-            </p>
-          </Transition>
+          <div class="w-12 h-[2px] bg-indigo-600"></div>
+
+          <p
+            class="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-300"
+          >
+            Fullstack Web Developer
+          </p>
         </div>
 
+        <!-- Heading -->
         <h1
-          class="text-3xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 leading-tight"
+          class="text-4xl sm:text-5xl lg:text-5xl xl:text-5xl font-extrabold leading-tight tracking-tight dark:text-white"
         >
-          Hi, I'm Gana — <br />
-          I build fast, modern web solutions.
+          Hi, I'm
+
+          <span
+            class="bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent"
+          >
+            Gana Purba
+          </span>
+
+          <br />
+
+          <span class="text-slate-900 dark:text-white">
+            Fullstack Web Developer
+          </span>
         </h1>
 
+        <!-- Description -->
         <p
-          class="mt-6 text-base md:text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          class="mt-6 text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
         >
-          I help startups and small businesses launch modern landing pages and
-          scalable web applications quickly — with clean code, clear
-          communication, and no unnecessary complexity.
+          I build modern web applications that are fast, scalable, and easy to
+          use. Passionate about transforming ideas into digital solutions that
+          help businesses streamline processes, improve efficiency, and create
+          better user experiences.
         </p>
 
-        <p class="mt-6 text-md text-slate-500 dark:text-slate-400">
-          🚀 Fast delivery • 💬 Clear communication • 🌍 Available worldwide
+        <!-- Value Proposition -->
+        <p class="mt-5 text-sm md:text-base text-slate-500 dark:text-slate-400">
+          🚀 Fast Delivery • 💬 Clear Communication • 🌍 Available Worldwide
         </p>
 
-        <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-4">
+        <!-- Buttons -->
+        <div
+          class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4"
+        >
           <a
             href="#portfolio"
-            class="px-6 py-3 bg-slate-900 text-white dark:bg-white dark:text-slate-900 rounded-lg shadow hover:bg-slate-800 transition"
+            class="px-7 py-3 rounded-xl bg-indigo-600 text-white font-medium shadow-lg hover:bg-indigo-700 transition-all duration-300"
           >
             View Projects
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1apWZbdxmbnTL0ejNmAWvFdJYha5iLCcG/view?usp=sharing"
+            href="cv/cv_ats_english.pdf"
             target="_blank"
-            class="px-6 py-3 border border-slate-300 rounded-lg hover:bg-slate-100 transition dark:bg-slate-800 dark:text-white dark:border-slate-600"
+            class="px-7 py-3 rounded-xl border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 dark:text-white"
           >
-            <FontAwesomeIcon :icon="['fas', 'download']" class="mr-2" />
+            <FontAwesomeIcon
+              :icon="['fas', 'download']"
+              class="mr-2 dark:text-white"
+            />
             Download CV
           </a>
-        </div>
-      </div>
-
-      <!-- RIGHT (TETAP TAMPIL DI MOBILE) -->
-      <div class="flex justify-center relative order-first lg:order-none">
-        <div
-          class="w-72 sm:w-80 md:w-[380px] lg:w-[420px] aspect-square rounded-2xl shadow-xl overflow-hidden border border-slate-200"
-        >
-          <img
-            src="/img/gana1.webp"
-            alt="Gana Portfolio Preview"
-            class="w-full h-full object-cover hover:scale-105 transition duration-700"
-            loading="lazy"
-          />
         </div>
       </div>
     </div>
