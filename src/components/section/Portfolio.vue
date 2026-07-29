@@ -1,6 +1,12 @@
 <script setup>
+import { computed } from "vue";
 import { projects } from "../../data/projects.json";
 import Project from "../layout/Project.vue";
+
+// Sort projects by ID descending so newest projects (last ID) appear first
+const sortedProjects = computed(() => {
+  return [...projects].sort((a, b) => b.id - a.id);
+});
 </script>
 
 <template>
@@ -30,10 +36,10 @@ import Project from "../layout/Project.vue";
         </p>
       </div>
 
-      <!-- GRID -->
+      <!-- GRID (Render sortedProjects in descending ID order) -->
       <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Project
-          v-for="project in projects"
+          v-for="project in sortedProjects"
           :key="project.id"
           :project="project"
         />
