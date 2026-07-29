@@ -6,44 +6,32 @@ import Project from "../layout/Project.vue";
 <template>
   <section
     id="portfolio"
-    class="relative py-24 overflow-hidden bg-gradient-to-b from-slate-100 via-slate-200 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+    class="relative py-20 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden"
   >
-    <!-- Glow background -->
+    <!-- Background Glow -->
     <div
-      class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-indigo-500/20 blur-[120px] rounded-full"
-    ></div>
-    <div
-      class="absolute -bottom-40 -right-40 w-[500px] h-[500px] bg-slate-400/20 blur-[120px] rounded-full"
+      class="absolute top-1/3 right-0 w-96 h-96 bg-amber-500/5 blur-3xl rounded-full pointer-events-none"
     ></div>
 
     <!-- Container -->
-    <div class="relative max-w-6xl mx-auto px-6">
+    <div class="relative max-w-6xl mx-auto px-5 sm:px-8">
       <!-- HEADER -->
       <div class="text-center max-w-2xl mx-auto">
-        <div class="flex items-center justify-center gap-4 mb-5">
-          <span class="h-px w-12 bg-indigo-500/70"></span>
+        <span class="inline-block text-xs uppercase tracking-widest font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3.5 py-1 rounded-full border border-emerald-200/50 dark:border-emerald-800/50 mb-4">
+          FEATURED PROJECTS
+        </span>
 
-          <p
-            class="text-xs font-semibold uppercase tracking-[0.35em] text-slate-500 dark:text-slate-400"
-          >
-            Portfolio
-          </p>
-
-          <span class="h-px w-12 bg-indigo-500/70"></span>
-        </div>
-
-        <h2 class="text-4xl font-bold text-slate-900 dark:text-white">
-          My <span class="text-indigo-500">Projects</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          Selected Works & Case Studies
         </h2>
 
-        <p class="mt-5 text-slate-600 dark:text-slate-400 leading-relaxed">
-          A curated collection of projects showcasing experience in building
-          modern, scalable, and high-performance web applications.
+        <p class="mt-4 text-base text-slate-600 dark:text-slate-400 leading-relaxed">
+          A curated collection of real-world web applications built for business efficiency, public administration, and seamless digital commerce.
         </p>
       </div>
 
       <!-- GRID -->
-      <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <Project
           v-for="project in projects"
           :key="project.id"
@@ -53,5 +41,3 @@ import Project from "../layout/Project.vue";
     </div>
   </section>
 </template>
-
-<style scoped></style>

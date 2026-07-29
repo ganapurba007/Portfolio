@@ -6,20 +6,23 @@ const activeSection = ref("home");
 const isScrolled = ref(false);
 const isOpen = ref(false);
 const isScrolling = ref(false);
-
 const sections = ref([]);
 
-/* =========================
-   EASING FUNCTION
-========================= */
+const navItems = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "work", label: "Experience" },
+  { id: "contact", label: "Contact" }
+];
+
+/* Custom smooth scroll */
 const easeInOutCubic = (t) => {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 };
 
-/* =========================
-   CUSTOM SMOOTH SCROLL
-========================= */
-const smoothScrollTo = (targetY, duration = 1200) => {
+const smoothScrollTo = (targetY, duration = 1000) => {
   const startY = window.scrollY;
   const distance = targetY - startY;
   let startTime = null;
@@ -28,7 +31,6 @@ const smoothScrollTo = (targetY, duration = 1200) => {
 
   const animation = (currentTime) => {
     if (!startTime) startTime = currentTime;
-
     const timeElapsed = currentTime - startTime;
     const progress = Math.min(timeElapsed / duration, 1);
     const easedProgress = easeInOutCubic(progress);
@@ -45,31 +47,20 @@ const smoothScrollTo = (targetY, duration = 1200) => {
   requestAnimationFrame(animation);
 };
 
-/* =========================
-   SCROLL TO SECTION
-========================= */
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (!section) return;
 
-  const navbarHeight = 100;
-
+  const navbarHeight = 80;
   isOpen.value = false;
-
-  // langsung set active
   activeSection.value = id;
 
-  setTimeout(() => {
-    const targetY = section.offsetTop - navbarHeight;
-    smoothScrollTo(targetY, 1200);
-  }, 150);
+  const targetY = section.offsetTop - navbarHeight;
+  smoothScrollTo(targetY, 900);
 };
 
-/* =========================
-   DETECT ACTIVE SECTION
-========================= */
 const detectActiveSection = () => {
-  const scrollPosition = window.scrollY + 150; // offset navbar
+  const scrollPosition = window.scrollY + 120;
 
   sections.value.forEach((section) => {
     const offsetTop = section.offsetTop;
@@ -81,26 +72,17 @@ const detectActiveSection = () => {
   });
 };
 
-/* =========================
-   NAVBAR STYLE ON SCROLL
-========================= */
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20;
 
-  // jangan update saat animasi smooth scroll
   if (!isScrolling.value) {
     detectActiveSection();
   }
 };
 
-/* =========================
-   LIFECYCLE
-========================= */
 onMounted(async () => {
   await nextTick();
-
   sections.value = Array.from(document.querySelectorAll("section[id]"));
-
   window.addEventListener("scroll", handleScroll);
 });
 
@@ -110,120 +92,148 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <nav
+  <header
     :class="[
-      'fixed top-0 w-full z-50 h-20 transition-all duration-300 dark:bg-slate-900',
+      'fixed top-0 left-0 w-full z-50 transition-all duration-300',
       isScrolled
-        ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-md'
-        : 'bg-transparent',
+        ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs py-3'
+        : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 py-4'
     ]"
   >
-    <div class="max-w-6xl mx-auto px-5">
-      <div class="flex justify-between items-center h-20">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-          <img
-            src="/img/icon.webp"
-            alt="icon_gp"
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 object-contain"
-          />
+    <div class="max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="flex justify-between items-center h-12">
+        <!-- Logo Brand -->
+        <a
+          href="#home"
+          @click.prevent="scrollToSection('home')"
+          class="flex items-center gap-3 group focus:outline-none"
+        >
+          <div class="relative w-10 h-10 rounded-xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 dark:ring-white/10 group-hover:scale-105 transition-transform duration-300">
+            <img
+              src="/img/icon.webp"
+              alt="Gana Purba Logo"
+              class="w-full h-full object-cover"
+            />
+          </div>
 
-          <h1
-            class="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 dark:from-indigo-400 dark:via-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent"
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white transition-colors">
+            Gana Purba<span class="text-emerald-500">.</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1 bg-slate-200/60 dark:bg-slate-900/80 p-1.5 rounded-full border border-slate-300/60 dark:border-slate-800/80 backdrop-blur-sm">
+          <a
+            v-for="item in navItems"
+            :key="item.id"
+            :href="`#${item.id}`"
+            @click.prevent="scrollToSection(item.id)"
+            :class="[
+              'relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200',
+              activeSection === item.id
+                ? 'bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm border border-slate-200/60 dark:border-slate-700/60'
+                : 'text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400'
+            ]"
           >
-            Gana Purba
-          </h1>
+            {{ item.label }}
+          </a>
+        </nav>
+
+        <!-- Right Utilities & CTA -->
+        <div class="hidden lg:flex items-center gap-4">
+          <DarkMode />
+
+          <a
+            href="#contact"
+            @click.prevent="scrollToSection('contact')"
+            class="inline-flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+          >
+            <span>Let's Talk</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
 
-        <!-- Desktop Menu -->
+        <!-- Mobile Action Buttons -->
+        <div class="flex lg:hidden items-center gap-3">
+          <DarkMode />
 
-        <ul class="hidden lg:flex gap-10 font-medium text-sm">
-          <li
-            v-for="item in [
-              'home',
-              'about',
-              // 'services',
-              'skills',
-              'portfolio',
-              'work',
-              'contact',
-            ]"
-            :key="item"
-          >
-            <a
-              :href="`#${item}`"
-              :class="[
-                'relative capitalize transition duration-300',
-                activeSection === item
-                  ? 'text-slate-600 dark:text-slate-200'
-                  : 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400',
-              ]"
-              @click.prevent="scrollToSection(item)"
-            >
-              {{ item }}
-
-              <!-- Underline Animation -->
-              <span
-                :class="[
-                  'absolute left-0 -bottom-1 h-[2px] w-full transition-transform duration-300 origin-left',
-                  activeSection === item
-                    ? 'bg-indigo-600 dark:bg-indigo-400 scale-x-100'
-                    : 'bg-indigo-600 dark:bg-indigo-400 scale-x-0 group-hover:scale-x-100',
-                ]"
-              ></span>
-            </a>
-          </li>
-          <li>
-            <DarkMode class="max-lg:hidden" />
-          </li>
-        </ul>
-
-        <!-- Mobile Button -->
-        <div class="flex items-center gap-5">
-          <DarkMode class="lg:hidden" />
           <button
             @click="isOpen = !isOpen"
-            class="lg:hidden text-2xl text-slate-900 dark:text-indigo-200"
-            aria-label="buttonHamburger"
+            type="button"
+            class="p-2 rounded-xl text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none border border-slate-200 dark:border-slate-800"
+            :aria-expanded="isOpen"
+            aria-label="Toggle navigation menu"
           >
-            ☰
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                v-if="!isOpen"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+              <path
+                v-else
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- Mobile Menu -->
-    <div
-      v-if="isOpen"
-      class="lg:hidden bg-white dark:bg-slate-900 shadow-lg border-t"
+    <!-- Mobile Dropdown Menu -->
+    <transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="opacity-0 -translate-y-2 scale-95"
+      enter-to-class="opacity-100 translate-y-0 scale-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0 scale-100"
+      leave-to-class="opacity-0 -translate-y-2 scale-95"
     >
-      <ul class="flex flex-col p-6 gap-4 font-medium">
-        <li
-          v-for="item in [
-            'home',
-            'about',
-            // 'services',
-            'skills',
-            'portfolio',
-            'work',
-            'contact',
-          ]"
-          :key="item"
-        >
+      <div
+        v-if="isOpen"
+        class="lg:hidden absolute top-full left-0 w-full bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200 dark:border-slate-800 shadow-xl px-5 py-6"
+      >
+        <div class="flex flex-col gap-2">
           <a
-            :href="`#${item}`"
-            @click.prevent="scrollToSection(item)"
+            v-for="item in navItems"
+            :key="item.id"
+            :href="`#${item.id}`"
+            @click.prevent="scrollToSection(item.id)"
             :class="[
-              'capitalize transition duration-300',
-              activeSection === item
-                ? 'text-indigo-600 dark:text-indigo-400 font-semibold'
-                : 'text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400',
+              'flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all',
+              activeSection === item.id
+                ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-bold'
+                : 'text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-900'
             ]"
           >
-            {{ item }}
+            <span>{{ item.label }}</span>
+            <span
+              v-if="activeSection === item.id"
+              class="w-2 h-2 rounded-full bg-emerald-500"
+            ></span>
           </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+
+          <div class="pt-4 mt-2 border-t border-slate-200 dark:border-slate-800">
+            <a
+              href="#contact"
+              @click.prevent="scrollToSection('contact')"
+              class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all active:scale-95"
+            >
+              <span>Get in Touch</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </header>
 </template>

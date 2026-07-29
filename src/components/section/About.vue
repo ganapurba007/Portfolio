@@ -3,125 +3,95 @@
 <template>
   <section
     id="about"
-    class="relative py-24 lg:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden"
+    class="relative py-20 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden"
   >
-    <!-- Background Blur -->
+    <!-- Background Glow -->
     <div
-      class="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] bg-indigo-500/10 blur-3xl rounded-full"
+      class="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none"
     ></div>
 
-    <div
-      class="absolute -top-40 -right-40 w-[30rem] h-[30rem] bg-orange-500/10 blur-3xl rounded-full"
-    ></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-4xl mx-auto text-center">
-        <!-- Label -->
-        <div class="flex items-center justify-center gap-3 mb-6">
-          <div class="w-12 h-[2px] bg-indigo-600"></div>
-
-          <span
-            class="uppercase tracking-[0.3em] text-xs font-semibold text-slate-500 dark:text-slate-400"
-          >
-            About Me
-          </span>
-
-          <div class="w-12 h-[2px] bg-indigo-600"></div>
-        </div>
+    <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Badge -->
+        <span class="inline-block text-xs uppercase tracking-widest font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3.5 py-1 rounded-full border border-emerald-200/50 dark:border-emerald-800/50 mb-4">
+          ABOUT ME
+        </span>
 
         <!-- Heading -->
         <h2
-          class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900 dark:text-white"
+          class="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-slate-900 dark:text-white"
         >
-          Building Digital Solutions
-
-          <span
-            class="block mt-2 bg-gradient-to-r from-indigo-600 via-violet-600 to-cyan-500 bg-clip-text text-transparent"
-          >
-            That Create Real Impact
-          </span>
+          Turning Complex Business Ideas Into High-Impact Digital Solutions
         </h2>
 
         <!-- Description -->
         <p
-          class="mt-8 text-lg md:text-xl leading-relaxed text-slate-600 dark:text-slate-400"
+          class="mt-6 text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-300"
         >
-          I am a
-          <span class="font-semibold text-indigo-600">
-            Fullstack Web Developer
-          </span>
-          with experience in developing business applications, information
-          systems, and digital platforms that help organizations improve
-          efficiency, productivity, and user engagement.
+          I am a Full-Stack Web Developer experienced in building enterprise management systems, web applications, and secure RESTful APIs. My primary focus is on delivering intuitive user experiences backed by clean, maintainable architecture.
         </p>
 
         <p
-          class="mt-5 text-lg leading-relaxed text-slate-600 dark:text-slate-400"
+          class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-300"
         >
-          Beyond coding, I enjoy solving complex problems, collaborating with
-          teams, and continuously learning new technologies to build scalable,
-          reliable, and impactful digital solutions.
+          Beyond writing code, I enjoy solving architectural challenges, collaborating in cross-functional teams, and continuously adopting modern web practices to deliver exceptional project outcomes.
         </p>
       </div>
 
-      <!-- Stats -->
+      <!-- Stats Cards -->
       <div
-        class="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-16 max-w-5xl mx-auto"
+        class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-14 max-w-4xl mx-auto"
       >
         <div
-          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          class="group bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 text-center shadow-xs hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
-          <h3
-            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform"
           >
             2+
-          </h3>
-
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
+          </div>
+          <div class="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
             Years Experience
-          </p>
+          </div>
         </div>
 
         <div
-          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          class="group bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 text-center shadow-xs hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
-          <h3
-            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform"
           >
             10+
-          </h3>
-
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Completed Projects
-          </p>
+          </div>
+          <div class="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
+            Delivered Projects
+          </div>
         </div>
 
         <div
-          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          class="group bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 text-center shadow-xs hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
-          <h3
-            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform"
           >
-            4+
-          </h3>
-
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Technical Skills
-          </p>
+            Full-Stack
+          </div>
+          <div class="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
+            Frontend & Backend
+          </div>
         </div>
 
         <div
-          class="group bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 text-center shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+          class="group bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-6 text-center shadow-xs hover:border-emerald-500/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300"
         >
-          <h3
-            class="text-4xl font-bold text-indigo-600 group-hover:scale-110 transition"
+          <div
+            class="text-3xl sm:text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform"
           >
             100%
-          </h3>
-
-          <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
-            Commitment
-          </p>
+          </div>
+          <div class="mt-2 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400">
+            Quality Commitment
+          </div>
         </div>
       </div>
     </div>

@@ -1,75 +1,66 @@
 <script setup></script>
 
 <template>
-  <section id="work" class="py-24 bg-white dark:bg-slate-900">
-    <div class="max-w-5xl mx-auto px-6">
+  <section id="work" class="py-20 lg:py-28 bg-slate-50/50 dark:bg-slate-950 transition-colors duration-300">
+    <div class="max-w-4xl mx-auto px-5 sm:px-8">
       <!-- Title -->
-      <div class="text-center">
-        <div class="flex justify-center items-center gap-3 mb-3">
-          <div class="w-10 h-[2px] bg-indigo-600 dark:bg-white"></div>
-          <p
-            class="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400"
-          >
-            Experience
-          </p>
-          <div class="w-10 h-[2px] bg-indigo-600 dark:bg-white"></div>
-        </div>
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="inline-block text-xs uppercase tracking-widest font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 px-3.5 py-1 rounded-full border border-emerald-200/50 dark:border-emerald-800/50 mb-4">
+          WORK EXPERIENCE
+        </span>
 
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100">
-          Work
-          <span class="text-indigo-600 dark:text-indigo-400">Experience</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+          Professional Track Record
         </h2>
 
-        <p
-          class="mt-3 text-slate-600 dark:text-slate-400 max-w-lg mx-auto text-md"
-        >
-          Real-world experience building systems that support business
-          operations and growth.
+        <p class="mt-4 text-base text-slate-600 dark:text-slate-400">
+          Hands-on experience engineering web systems that power real business operations and scale efficiency.
         </p>
       </div>
 
       <!-- Timeline -->
-      <div class="relative mt-16">
+      <div class="relative mt-8">
         <!-- Vertical Line -->
         <div
-          class="absolute left-4 top-0 bottom-0 w-px bg-slate-200 dark:bg-slate-700"
+          class="absolute left-3.5 sm:left-4 top-2 bottom-2 w-0.5 bg-slate-200 dark:bg-slate-800"
         ></div>
 
-        <!-- Item -->
-        <div class="relative pl-12 mb-12">
-          <!-- Dot -->
+        <!-- Timeline Item -->
+        <div class="relative pl-10 sm:pl-12 mb-8">
+          <!-- Pulse Dot -->
           <div
-            class="absolute left-[9px] top-2 h-4 w-4 rounded-full bg-indigo-600 dark:bg-indigo-400 ring-4 ring-indigo-100 dark:ring-indigo-900"
+            class="absolute left-1.5 sm:left-2 top-3 -translate-x-1/2 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-emerald-100 dark:ring-emerald-950"
           ></div>
 
           <!-- Card -->
           <div
-            class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition duration-300"
+            class="bg-white dark:bg-slate-900 p-6 sm:p-7 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-md transition-shadow"
           >
-            <!-- Date + Badge -->
-            <div class="flex items-center gap-3">
-              <p class="text-sm text-slate-400 dark:text-slate-500 font-medium">
+            <!-- Date & Status -->
+            <div class="flex flex-wrap items-center gap-3 mb-2">
+              <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">
                 May 2024 – Present
-              </p>
+              </span>
 
               <span
-                class="text-xs font-semibold bg-indigo-100 dark :bg-indigo-900 text-indigo-600 dark:text-indigo-700 px-2 py-1 rounded-full"
+                class="text-[11px] font-bold bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60 px-2.5 py-0.5 rounded-full"
               >
-                Current
+                Current Role
               </span>
             </div>
 
+            <!-- Role & Organization (No "-" AI format) -->
             <h3
-              class="text-xl font-semibold text-slate-900 dark:text-slate-100 mt-2"
+              class="text-xl font-extrabold text-slate-900 dark:text-white"
             >
-              Fullstack Web Developer - Yogya Executive School
+              Full-Stack Web Developer
             </h3>
+            <p class="text-sm font-semibold text-emerald-600 dark:text-emerald-400 mt-0.5">
+              Yogya Executive School
+            </p>
 
-            <p class="text-slate-600 dark:text-slate-400 mt-3 leading-relaxed">
-              Led the development of scalable web applications used by internal
-              teams and clients, improving system efficiency and reducing manual
-              processes. Delivered clean, maintainable code while ensuring
-              performance and long-term stability.
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+              Spearheaded the development of scalable web applications for internal operations and client solutions. Streamlined workflow automation, eliminated manual overhead, and authored maintainable, modular codebases built for long-term stability.
             </p>
           </div>
         </div>
