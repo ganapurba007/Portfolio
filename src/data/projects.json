@@ -5,7 +5,11 @@
       "title": "Simparpora Boven Digoel",
       "link": "https://yesjogja.net/simparpora_boven_digoel/",
       "description": "An official website developed to provide the public with information about youth and sports activities in Boven Digoel Regency, including news, galleries, announcements, and other related updates.",
-      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
+      "stacks": [
+        "CodeIgniter",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "image": "/img/project/simparpora/1.webp",
       "images": [
         "/img/project/simparpora/1.webp"
@@ -16,7 +20,11 @@
       "title": "Sinata",
       "link": "https://mmkjogja.net/sinata/sinata",
       "description": "A web-based visitor management system created for a regional government office to handle guest visit reservations efficiently. The system simplifies appointment scheduling and improves administrative coordination.",
-      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
+      "stacks": [
+        "CodeIgniter",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "image": "/img/project/sinata/1.webp",
       "images": [
         "/img/project/sinata/1.webp"
@@ -27,7 +35,12 @@
       "title": "SIM PKK PPU",
       "link": "https://simpkk.penajamkab.go.id/",
       "description": "A centralized information system designed to manage and maintain member and volunteer data for the Family Empowerment and Welfare organization, from regional to national levels. The platform ensures accurate data recording and reporting.",
-      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript", "Rest API"],
+      "stacks": [
+        "CodeIgniter",
+        "Bootstrap",
+        "JavaScript",
+        "Rest API"
+      ],
       "image": "/img/project/simpkk/1.webp",
       "images": [
         "/img/project/simpkk/1.webp"
@@ -38,7 +51,11 @@
       "title": "Sirutama",
       "link": "https://esetda.penajamkab.go.id/sirutama",
       "description": "A web-based reservation system developed for the Penajam local government to manage bookings for meeting rooms, guest houses, and official accommodations. The system enhances scheduling efficiency and resource management.",
-      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
+      "stacks": [
+        "CodeIgniter",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "image": "/img/project/sirutama/1.webp",
       "images": [
         "/img/project/sirutama/1.webp"
@@ -49,10 +66,15 @@
       "title": "E-Procurement System",
       "link": "https://mmkjogja.net/e-procurement",
       "description": "A web-based procurement management system designed to streamline vendor registration, tender management, and document tracking processes. The platform improves transparency, efficiency, and workflow automation.",
-      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
+      "stacks": [
+        "CodeIgniter",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "image": "/img/project/eprocurement/1.webp",
       "images": [
-        "/img/project/eprocurement/1.webp"
+        "/img/project/eprocurement/1.webp",
+        "/img/project/eprocurement/2.webp"
       ]
     },
     {
@@ -60,7 +82,11 @@
       "title": "Portfolio",
       "link": "https://ganapurba.vercel.app",
       "description": "A modern personal portfolio website designed to present development skills, projects, and professional experience. Built with Vue.js, Tailwind CSS, and JavaScript, featuring a responsive and minimalist UI for optimal user experience.",
-      "stacks": ["Vue JS", "Tailwind", "JavaScript"],
+      "stacks": [
+        "Vue JS",
+        "Tailwind",
+        "JavaScript"
+      ],
       "image": "/img/project/portfolio/1.webp",
       "images": [
         "/img/project/portfolio/1.webp"
@@ -71,7 +97,11 @@
       "title": "Human Resource Information System",
       "link": "https://ganahris.infinityfree.me/",
       "description": "A comprehensive Human Resource Information System that streamlines employee management, payroll processing, task distribution, and leave management. Built with a multi-role access system to ensure secure and efficient workflows, using Laravel, Bootstrap, and JavaScript.",
-      "stacks": ["Laravel", "Bootstrap", "JavaScript"],
+      "stacks": [
+        "Laravel",
+        "Bootstrap",
+        "JavaScript"
+      ],
       "image": "/img/project/hris/1.webp",
       "images": [
         "/img/project/hris/1.webp"
@@ -82,10 +112,16 @@
       "title": "QMam",
       "link": "https://qmam.infinityfree.me/",
       "description": "A restaurant ordering and management system that enables customers to browse menus, place orders, and complete payments online through Midtrans integration. Features include order management, cart functionality, and role-based access control built with Laravel, Bootstrap, and JavaScript.",
-      "stacks": ["Laravel", "Bootstrap", "JavaScript", "Midtrans"],
+      "stacks": [
+        "Laravel",
+        "Bootstrap",
+        "JavaScript",
+        "Midtrans"
+      ],
       "image": "/img/project/qmam/1.png",
       "images": [
-        "/img/project/qmam/1.png"
+        "/img/project/qmam/1.png",
+        "/img/project/qmam/2.png"
       ]
     }
   ]
