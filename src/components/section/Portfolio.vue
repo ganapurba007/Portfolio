@@ -14,11 +14,11 @@ const sortedProjects = computed(() => {
 <template>
   <section
     id="portfolio"
-    class="relative py-20 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300 overflow-hidden"
+    class="relative py-20 lg:py-28 bg-slate-100/60 dark:bg-slate-900 transition-colors duration-300 overflow-hidden"
   >
     <!-- Background Glow -->
     <div
-      class="absolute top-1/3 right-0 w-96 h-96 bg-amber-500/5 blur-3xl rounded-full pointer-events-none"
+      class="absolute top-1/3 right-0 w-96 h-96 bg-amber-400/15 dark:bg-amber-500/5 blur-3xl rounded-full pointer-events-none"
     ></div>
 
     <!-- Container -->

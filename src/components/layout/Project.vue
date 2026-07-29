@@ -67,7 +67,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="group flex flex-col bg-slate-50/50 dark:bg-slate-800/60 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+    class="group flex flex-col bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-md hover:shadow-2xl hover:border-emerald-500/50 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
   >
     <!-- Image Preview Container (Clickable to open detail modal) -->
     <div

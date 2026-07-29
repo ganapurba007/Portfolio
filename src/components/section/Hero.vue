@@ -46,14 +46,14 @@ onBeforeUnmount(() => {
 <template>
   <section
     id="home"
-    class="relative overflow-hidden bg-slate-50/50 dark:bg-slate-950 transition-colors duration-300 min-h-[calc(100vh-80px)] flex items-center"
+    class="relative overflow-hidden bg-slate-100/70 dark:bg-none dark:bg-slate-950 transition-colors duration-300 min-h-[calc(100vh-80px)] flex items-center"
   >
-    <!-- Ambient Background Glows -->
+    <!-- Ambient Background Glows for Light & Dark Mode -->
     <div
-      class="absolute -top-32 right-0 w-96 h-96 bg-emerald-400/10 dark:bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"
+      class="absolute -top-32 right-1/4 w-96 h-96 bg-emerald-400/20 dark:bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"
     ></div>
     <div
-      class="absolute bottom-10 -left-20 w-80 h-80 bg-amber-400/10 dark:bg-amber-500/10 blur-3xl rounded-full pointer-events-none"
+      class="absolute top-1/2 -left-20 w-80 h-80 bg-amber-400/20 dark:bg-amber-500/10 blur-3xl rounded-full pointer-events-none"
     ></div>
 
     <div
@@ -68,13 +68,13 @@ onBeforeUnmount(() => {
       >
         <!-- Status Pill Badge -->
         <div
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/60 dark:border-emerald-800/60 mb-6"
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 dark:bg-emerald-950/60 border border-emerald-300/80 dark:border-emerald-800/60 shadow-xs mb-6"
         >
           <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
           </span>
-          <span class="text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+          <span class="text-xs font-bold text-emerald-800 dark:text-emerald-300">
             Available for Projects & Remote Opportunities
           </span>
         </div>
@@ -85,7 +85,7 @@ onBeforeUnmount(() => {
         >
           Hi, I'm Gana Purba.
           <span
-            class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 via-teal-600 to-amber-500 dark:from-emerald-400 dark:via-teal-300 dark:to-amber-300"
+            class="block mt-2 text-emerald-600 dark:text-emerald-400 font-extrabold"
           >
             Full-Stack Web Developer
           </span>
@@ -93,24 +93,24 @@ onBeforeUnmount(() => {
 
         <!-- Description -->
         <p
-          class="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal"
+          class="mt-6 text-base sm:text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
         >
           I design and engineer high-performance web applications that deliver real business impact. From robust backend architectures to modern, intuitive user interfaces.
         </p>
 
         <!-- Highlights -->
         <div class="mt-8 grid grid-cols-3 gap-3 sm:gap-4 max-w-lg mx-auto lg:mx-0">
-          <div class="p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/60 dark:border-slate-800 shadow-xs">
-            <div class="text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400">100%</div>
-            <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Clean Code</div>
+          <div class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-emerald-500/40 transition-all">
+            <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">100%</div>
+            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Clean Code</div>
           </div>
-          <div class="p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/60 dark:border-slate-800 shadow-xs">
-            <div class="text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400">Fast</div>
-            <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Responsive UI</div>
+          <div class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-emerald-500/40 transition-all">
+            <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">Fast</div>
+            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Responsive UI</div>
           </div>
-          <div class="p-3 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/60 dark:border-slate-800 shadow-xs">
-            <div class="text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400">End-to-End</div>
-            <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Full-Stack Solutions</div>
+          <div class="p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md hover:shadow-xl hover:border-emerald-500/40 transition-all">
+            <div class="text-xl sm:text-2xl font-black text-emerald-600 dark:text-emerald-400">End-to-End</div>
+            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mt-1">Full-Stack Solutions</div>
           </div>
         </div>
 

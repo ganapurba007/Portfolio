@@ -16,8 +16,12 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
 <template>
   <section
     id="skills"
-    class="relative py-20 lg:py-28 bg-slate-50/50 dark:bg-slate-950 transition-colors duration-300 overflow-hidden"
+    class="relative py-20 lg:py-28 bg-slate-50/90 dark:bg-slate-950 transition-colors duration-300 overflow-hidden"
   >
+    <!-- Background Glow -->
+    <div
+      class="absolute top-1/3 right-0 w-96 h-96 bg-amber-400/10 dark:bg-amber-500/10 blur-3xl rounded-full pointer-events-none"
+    ></div>
     <div class="relative z-10 max-w-6xl mx-auto px-5 sm:px-8">
       <!-- Header -->
       <div class="mb-14 text-center max-w-2xl mx-auto">
