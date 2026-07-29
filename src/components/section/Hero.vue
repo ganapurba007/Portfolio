@@ -1,10 +1,29 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const isVisible = ref(false);
+const isPreviewOpen = ref(false);
+
+const openResumePreview = () => {
+  isPreviewOpen.value = true;
+  document.body.style.overflow = "hidden";
+};
+
+const closeResumePreview = () => {
+  isPreviewOpen.value = false;
+  document.body.style.overflow = "";
+};
+
+const handleKeyDown = (e) => {
+  if (e.key === "Escape" && isPreviewOpen.value) {
+    closeResumePreview();
+  }
+};
 
 onMounted(() => {
+  window.addEventListener("keydown", handleKeyDown);
+
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
@@ -16,6 +35,11 @@ onMounted(() => {
 
   const el = document.querySelector("#home");
   if (el) observer.observe(el);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("keydown", handleKeyDown);
+  document.body.style.overflow = "";
 });
 </script>
 
@@ -104,17 +128,18 @@ onMounted(() => {
             </svg>
           </a>
 
-          <a
-            href="cv/resume.pdf"
-            target="_blank"
-            class="px-7 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm shadow-xs transition-all duration-300 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2"
+          <!-- Resume Preview Button -->
+          <button
+            @click="openResumePreview"
+            type="button"
+            class="px-7 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm shadow-xs transition-all duration-300 hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
           >
             <FontAwesomeIcon
               :icon="['fas', 'download']"
-              class="text-slate-500 dark:text-slate-400"
+              class="text-emerald-600 dark:text-emerald-400"
             />
-            <span>Download Resume / CV</span>
-          </a>
+            <span>View & Download Resume</span>
+          </button>
         </div>
       </div>
 
@@ -140,5 +165,78 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
+    <!-- Resume Preview Modal -->
+    <Teleport to="body">
+      <transition
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-if="isPreviewOpen"
+          class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md"
+          @click.self="closeResumePreview"
+        >
+          <div
+            class="relative w-full max-w-5xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200/80 dark:border-slate-800 overflow-hidden flex flex-col max-h-[92vh]"
+          >
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/50 dark:border-emerald-800/50 text-emerald-600 dark:text-emerald-400">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-slate-900 dark:text-white">
+                    Resume / CV Preview
+                  </h3>
+                  <p class="text-xs text-slate-500 dark:text-slate-400">Gana Purba Kusuma - Full-Stack Web Developer</p>
+                </div>
+              </div>
+
+              <!-- Header Actions -->
+              <div class="flex items-center gap-3">
+                <!-- Direct Download Link -->
+                <a
+                  href="/cv/resume.pdf"
+                  download="Resume_Gana_Purba.pdf"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-sm transition-all active:scale-95"
+                >
+                  <FontAwesomeIcon :icon="['fas', 'download']" class="w-3.5 h-3.5" />
+                  <span>Download PDF</span>
+                </a>
+
+                <!-- Close Button -->
+                <button
+                  @click="closeResumePreview"
+                  type="button"
+                  class="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+                  aria-label="Close Preview"
+                >
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Modal Body (PDF Viewer) -->
+            <div class="flex-1 bg-slate-100 dark:bg-slate-950 p-2 sm:p-4 overflow-hidden relative">
+              <iframe
+                src="/cv/resume.pdf"
+                class="w-full h-[68vh] sm:h-[75vh] rounded-xl border border-slate-200/60 dark:border-slate-800 shadow-inner"
+                title="Resume PDF Preview"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </transition>
+    </Teleport>
   </section>
 </template>
