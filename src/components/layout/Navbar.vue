@@ -22,7 +22,7 @@ const easeInOutCubic = (t) => {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
 };
 
-const smoothScrollTo = (targetY, duration = 1000) => {
+const smoothScrollTo = (targetY, duration = 800) => {
   const startY = window.scrollY;
   const distance = targetY - startY;
   let startTime = null;
@@ -56,11 +56,19 @@ const scrollToSection = (id) => {
   activeSection.value = id;
 
   const targetY = section.offsetTop - navbarHeight;
-  smoothScrollTo(targetY, 900);
+  smoothScrollTo(targetY, 800);
 };
 
 const detectActiveSection = () => {
-  const scrollPosition = window.scrollY + 120;
+  const scrollPosition = window.scrollY + 140;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  // If scrolled to bottom, set active to contact
+  if (window.scrollY + windowHeight >= documentHeight - 50) {
+    activeSection.value = "contact";
+    return;
+  }
 
   sections.value.forEach((section) => {
     const offsetTop = section.offsetTop;
@@ -83,7 +91,8 @@ const handleScroll = () => {
 onMounted(async () => {
   await nextTick();
   sections.value = Array.from(document.querySelectorAll("section[id]"));
-  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  detectActiveSection();
 });
 
 onBeforeUnmount(() => {
@@ -96,8 +105,8 @@ onBeforeUnmount(() => {
     :class="[
       'fixed top-0 left-0 w-full z-50 transition-all duration-300',
       isScrolled
-        ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-lg border-b border-slate-200/80 dark:border-slate-800/80 shadow-xs py-3'
-        : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50 py-4'
+        ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-b border-slate-200/90 dark:border-slate-800/90 shadow-sm py-3'
+        : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 py-4'
     ]"
   >
     <div class="max-w-6xl mx-auto px-5 sm:px-8">
@@ -121,18 +130,18 @@ onBeforeUnmount(() => {
           </span>
         </a>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex items-center gap-1 bg-slate-200/60 dark:bg-slate-900/80 p-1.5 rounded-full border border-slate-300/60 dark:border-slate-800/80 backdrop-blur-sm">
+        <!-- Desktop Navigation with Interactive Hover & Active Pill -->
+        <nav class="hidden lg:flex items-center gap-1 bg-slate-200/70 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-300/70 dark:border-slate-800 backdrop-blur-md">
           <a
             v-for="item in navItems"
             :key="item.id"
             :href="`#${item.id}`"
             @click.prevent="scrollToSection(item.id)"
             :class="[
-              'relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200',
+              'relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 cursor-pointer select-none',
               activeSection === item.id
-                ? 'bg-white dark:bg-slate-800 text-emerald-600 dark:text-emerald-400 shadow-sm border border-slate-200/60 dark:border-slate-700/60'
-                : 'text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400'
+                ? 'bg-emerald-600 dark:bg-emerald-500 text-white shadow-sm font-bold scale-[1.02]'
+                : 'text-slate-700 dark:text-slate-200 hover:bg-slate-300/70 dark:hover:bg-slate-800 hover:text-emerald-700 dark:hover:text-emerald-300'
             ]"
           >
             {{ item.label }}
@@ -210,7 +219,7 @@ onBeforeUnmount(() => {
               'flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all',
               activeSection === item.id
                 ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-bold'
-                : 'text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-900'
+                : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-emerald-600 dark:hover:text-emerald-400'
             ]"
           >
             <span>{{ item.label }}</span>
