@@ -1,12 +1,10 @@
 <script setup>
-import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import DarkMode from "../Icon/DarkMode.vue";
 
 const activeSection = ref("home");
 const isScrolled = ref(false);
 const isOpen = ref(false);
-const isScrolling = ref(false);
-const sections = ref([]);
 
 const navItems = [
   { id: "home", label: "Home" },
@@ -17,86 +15,64 @@ const navItems = [
   { id: "contact", label: "Contact" }
 ];
 
-/* Custom smooth scroll */
-const easeInOutCubic = (t) => {
-  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-};
-
-const smoothScrollTo = (targetY, duration = 800) => {
-  const startY = window.scrollY;
-  const distance = targetY - startY;
-  let startTime = null;
-
-  isScrolling.value = true;
-
-  const animation = (currentTime) => {
-    if (!startTime) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const progress = Math.min(timeElapsed / duration, 1);
-    const easedProgress = easeInOutCubic(progress);
-
-    window.scrollTo(0, startY + distance * easedProgress);
-
-    if (timeElapsed < duration) {
-      requestAnimationFrame(animation);
-    } else {
-      isScrolling.value = false;
-    }
-  };
-
-  requestAnimationFrame(animation);
-};
-
+/* Smooth Scroll to Target Section */
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (!section) return;
 
-  const navbarHeight = 80;
   isOpen.value = false;
   activeSection.value = id;
 
-  const targetY = section.offsetTop - navbarHeight;
-  smoothScrollTo(targetY, 800);
+  const navbarHeight = 70;
+  const targetY = section.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+  window.scrollTo({
+    top: targetY,
+    behavior: "smooth"
+  });
 };
 
-const detectActiveSection = () => {
-  const scrollPosition = window.scrollY + 140;
+/* Detect Active Section on Scroll using getBoundingClientRect */
+const updateActiveSection = () => {
+  isScrolled.value = window.scrollY > 20;
+
+  const scrollPosition = window.scrollY;
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;
 
-  // If scrolled to bottom, set active to contact
-  if (window.scrollY + windowHeight >= documentHeight - 50) {
+  // 1. If reached bottom of page, activate last item ("contact")
+  if (scrollPosition + windowHeight >= documentHeight - 60) {
     activeSection.value = "contact";
     return;
   }
 
-  sections.value.forEach((section) => {
-    const offsetTop = section.offsetTop;
-    const height = section.offsetHeight;
+  // 2. Iterate through sections to find which one is currently in viewport
+  const navItemIds = navItems.map((item) => item.id);
+  let currentActive = "home";
 
-    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
-      activeSection.value = section.id;
+  for (const id of navItemIds) {
+    const el = document.getElementById(id);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      // Section is active if top is within upper viewport area (<= 220px) and bottom is still visible (>= 120px)
+      if (rect.top <= 220 && rect.bottom >= 120) {
+        currentActive = id;
+      }
     }
-  });
-};
-
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 20;
-
-  if (!isScrolling.value) {
-    detectActiveSection();
   }
+
+  activeSection.value = currentActive;
 };
 
-onMounted(async () => {
-  await nextTick();
-  sections.value = Array.from(document.querySelectorAll("section[id]"));
-  window.addEventListener("scroll", handleScroll, { passive: true });
-  detectActiveSection();
+onMounted(() => {
+  window.addEventListener("scroll", updateActiveSection, { passive: true });
+  window.addEventListener("resize", updateActiveSection, { passive: true });
+  updateActiveSection();
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", handleScroll);
+  window.removeEventListener("scroll", updateActiveSection);
+  window.removeEventListener("resize", updateActiveSection);
 });
 </script>
 
@@ -130,7 +106,7 @@ onBeforeUnmount(() => {
           </span>
         </a>
 
-        <!-- Desktop Navigation with Interactive Hover & Active Pill -->
+        <!-- Desktop Navigation: Active Pill updates dynamically on scroll -->
         <nav class="hidden lg:flex items-center gap-1 bg-slate-200/70 dark:bg-slate-900/90 p-1.5 rounded-full border border-slate-300/70 dark:border-slate-800 backdrop-blur-md">
           <a
             v-for="item in navItems"
@@ -138,9 +114,9 @@ onBeforeUnmount(() => {
             :href="`#${item.id}`"
             @click.prevent="scrollToSection(item.id)"
             :class="[
-              'relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-200 cursor-pointer select-none',
+              'relative px-4 py-1.5 text-xs font-bold rounded-full transition-all duration-300 cursor-pointer select-none',
               activeSection === item.id
-                ? 'bg-emerald-600 dark:bg-emerald-500 text-white shadow-sm font-bold scale-[1.02]'
+                ? 'bg-emerald-600 dark:bg-emerald-500 text-white shadow-md font-bold scale-[1.03]'
                 : 'text-slate-700 dark:text-slate-200 hover:bg-slate-300/70 dark:hover:bg-slate-800 hover:text-emerald-700 dark:hover:text-emerald-300'
             ]"
           >
@@ -218,14 +194,14 @@ onBeforeUnmount(() => {
             :class="[
               'flex items-center justify-between px-4 py-3 rounded-xl text-sm font-semibold transition-all',
               activeSection === item.id
-                ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 font-bold'
+                ? 'bg-emerald-600 text-white font-bold shadow-sm'
                 : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-emerald-600 dark:hover:text-emerald-400'
             ]"
           >
             <span>{{ item.label }}</span>
             <span
               v-if="activeSection === item.id"
-              class="w-2 h-2 rounded-full bg-emerald-500"
+              class="w-2 h-2 rounded-full bg-white"
             ></span>
           </a>
 
