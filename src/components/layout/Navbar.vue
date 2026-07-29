@@ -32,7 +32,7 @@ const scrollToSection = (id) => {
   });
 };
 
-/* Detect Active Section on Scroll using getBoundingClientRect */
+/* Detect Active Section smoothly on Scroll */
 const updateActiveSection = () => {
   isScrolled.value = window.scrollY > 20;
 
@@ -40,28 +40,28 @@ const updateActiveSection = () => {
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;
 
-  // 1. If reached bottom of page, activate last item ("contact")
-  if (scrollPosition + windowHeight >= documentHeight - 60) {
+  // 1. If reached bottom of page, activate last section ("contact")
+  if (scrollPosition + windowHeight >= documentHeight - 50) {
     activeSection.value = "contact";
     return;
   }
 
-  // 2. Iterate through sections to find which one is currently in viewport
+  // 2. Determine active section based on top offset threshold
+  const offsetThreshold = 180;
   const navItemIds = navItems.map((item) => item.id);
-  let currentActive = "home";
+  let bestMatch = "home";
 
   for (const id of navItemIds) {
     const el = document.getElementById(id);
     if (el) {
       const rect = el.getBoundingClientRect();
-      // Section is active if top is within upper viewport area (<= 220px) and bottom is still visible (>= 120px)
-      if (rect.top <= 220 && rect.bottom >= 120) {
-        currentActive = id;
+      if (rect.top <= offsetThreshold) {
+        bestMatch = id;
       }
     }
   }
 
-  activeSection.value = currentActive;
+  activeSection.value = bestMatch;
 };
 
 onMounted(() => {
