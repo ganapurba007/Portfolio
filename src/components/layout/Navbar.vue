@@ -93,16 +93,16 @@ onBeforeUnmount(() => {
           @click.prevent="scrollToSection('home')"
           class="flex items-center gap-3 group focus:outline-none"
         >
-          <div class="relative w-10 h-10 rounded-xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 dark:ring-white/10 group-hover:scale-105 transition-transform duration-300">
+          <div class="relative w-10 h-10 p-1 rounded-xl bg-white dark:bg-white shadow-xs border border-slate-200/80 dark:border-slate-200 group-hover:scale-105 transition-transform duration-300 flex items-center justify-center">
             <img
               src="/img/icon.webp"
               alt="Gana Purba Logo"
-              class="w-full h-full object-cover"
+              class="w-full h-full object-contain"
             />
           </div>
 
           <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white transition-colors">
-            Gana Purba<span class="text-emerald-500">.</span>
+            Gana Purba
           </span>
         </a>
 

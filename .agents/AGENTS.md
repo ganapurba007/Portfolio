@@ -1,4 +1,4 @@
 # Project Rules
 
 ## Git Workflow
-- Automatically stage (`git add .`), commit with a descriptive message, and push (`git push origin master`) to GitHub whenever code changes are completed and verified.
+- Only perform `git push` when explicitly instructed by the user. Do not push automatically after completing changes.

@@ -32,14 +32,14 @@ onMounted(() => {
   <button
     @click="toggleTheme"
     type="button"
-    class="relative p-2.5 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-all duration-300 focus:outline-none border border-slate-200/60 dark:border-slate-800 flex items-center justify-center group"
-    :title="isDark ? 'Mode Terang' : 'Mode Gelap'"
-    aria-label="Toggle Dark Mode"
+    class="relative p-2.5 rounded-full bg-slate-200/80 dark:bg-slate-800/90 hover:bg-slate-300/80 dark:hover:bg-slate-700/90 border border-slate-300/80 dark:border-slate-700/80 text-slate-800 dark:text-slate-100 shadow-sm hover:shadow-md transition-all duration-300 focus:outline-none flex items-center justify-center group active:scale-95"
+    :title="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+    :aria-label="isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
   >
-    <!-- Sun Icon (Light Mode) -->
+    <!-- Sun Icon (Light Mode Trigger) -->
     <svg
       v-if="isDark"
-      class="w-4 h-4 text-amber-400 group-hover:rotate-45 transition-transform duration-300"
+      class="w-5 h-5 text-amber-400 group-hover:rotate-45 transition-transform duration-300 drop-shadow-xs"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
@@ -52,10 +52,10 @@ onMounted(() => {
       />
     </svg>
 
-    <!-- Moon Icon (Dark Mode) -->
+    <!-- Moon Icon (Dark Mode Trigger) -->
     <svg
       v-else
-      class="w-4 h-4 text-slate-700 group-hover:-rotate-12 transition-transform duration-300"
+      class="w-5 h-5 text-slate-700 group-hover:-rotate-12 transition-transform duration-300 drop-shadow-xs"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
