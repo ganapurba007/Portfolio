@@ -3,9 +3,11 @@ import { computed } from "vue";
 import { projects } from "../../data/projects.json";
 import Project from "../layout/Project.vue";
 
-// Sort projects by ID descending so newest projects (last ID) appear first
+// Sort projects by ID descending so newest projects appear first (excluding hidden/draft projects)
 const sortedProjects = computed(() => {
-  return [...projects].sort((a, b) => b.id - a.id);
+  return [...projects]
+    .filter((project) => !project.hide)
+    .sort((a, b) => b.id - a.id);
 });
 </script>
 
