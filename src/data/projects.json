@@ -105,7 +105,13 @@
       "description": "A modern personal portfolio website designed to present development skills, projects, and professional experience. Built with Vue.js, Tailwind CSS, and JavaScript, featuring a responsive and minimalist UI for optimal user experience.",
       "stacks": ["Vue JS", "Tailwind", "JavaScript"],
       "image": "/img/project/portfolio/1.webp",
-      "images": ["/img/project/portfolio/1.webp"]
+      "images": [
+        "/img/project/portfolio/1.webp",
+        "/img/project/portfolio/2.webp",
+        "/img/project/portfolio/3.webp",
+        "/img/project/portfolio/4.webp",
+        "/img/project/portfolio/5.webp"
+      ]
     },
     {
       "id": 10,
