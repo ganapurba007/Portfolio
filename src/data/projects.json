@@ -153,6 +153,20 @@
         "/img/project/epresensi/3.webp",
         "/img/project/epresensi/4.webp"
       ]
+    },
+    {
+      "id": 13,
+      "title": "Job Tracker",
+      "link": "https://jobtracker-portal.vercel.app/",
+      "description": "Job Tracker is a modern, responsive web application designed to help job seekers organize, track, and manage their job applications seamlessly. Built with Vue 3 and Tailwind CSS, it features real-time application analytics, application timeline history, automated 2-hour session security, and a 1-click recruiter demo mode.",
+      "stacks": ["Vue JS", "Tailwind", "Laravel", "Rest API"],
+      "image": "/img/project/jobtracker/2.webp",
+      "images": [
+        "/img/project/jobtracker/1.webp",
+        "/img/project/jobtracker/2.webp",
+        "/img/project/jobtracker/3.webp",
+        "/img/project/jobtracker/4.webp"
+      ]
     }
   ]
 }
