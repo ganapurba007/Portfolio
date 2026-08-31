@@ -11,6 +11,9 @@ import GithubIcon from "../Icon/GithubIcon.vue";
 import PostmanIcon from "../Icon/PostmanIcon.vue";
 import VscodeIcon from "../Icon/VscodeIcon.vue";
 import BitbucketIcon from "../Icon/BitbucketIcon.vue";
+import NodeIcon from "../Icon/NodeIcon.vue";
+import ExpressIcon from "../Icon/ExpressIcon.vue";
+import MongoIcon from "../Icon/MongoIcon.vue";
 </script>
 
 <template>
@@ -79,6 +82,16 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
             </div>
 
             <div class="group flex flex-col items-center justify-center p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 hover:-translate-y-0.5 transition-all">
+              <NodeIcon class="text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#5FA04E] transition-colors mb-1.5" />
+              <span>Node.js</span>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 hover:-translate-y-0.5 transition-all">
+              <ExpressIcon class="text-3xl text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors mb-1.5" />
+              <span>Express.js</span>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 hover:-translate-y-0.5 transition-all">
               <CodeigniterIcon class="text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#EF4223] transition-colors mb-1.5" />
               <span>CodeIgniter</span>
             </div>
@@ -101,6 +114,11 @@ import BitbucketIcon from "../Icon/BitbucketIcon.vue";
             <div class="group flex flex-col items-center justify-center p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 hover:-translate-y-0.5 transition-all">
               <MysqlIcon class="text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#4479A1] transition-colors mb-1.5" />
               <span>MySQL</span>
+            </div>
+
+            <div class="group flex flex-col items-center justify-center p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-xs font-medium text-slate-700 dark:text-slate-300 hover:border-emerald-500/50 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 hover:-translate-y-0.5 transition-all">
+              <MongoIcon class="text-3xl text-slate-700 dark:text-slate-300 group-hover:text-[#47A248] transition-colors mb-1.5" />
+              <span>MongoDB</span>
             </div>
           </div>
         </div>
