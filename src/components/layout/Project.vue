@@ -23,6 +23,16 @@ const imageList = computed(() => {
   return props.project.image ? [props.project.image] : [];
 });
 
+const visibleStacks = computed(() => {
+  if (!Array.isArray(props.project.stacks)) return [];
+  return props.project.stacks.slice(0, 3);
+});
+
+const remainingStacksCount = computed(() => {
+  if (!Array.isArray(props.project.stacks)) return 0;
+  return Math.max(0, props.project.stacks.length - 3);
+});
+
 const openModal = () => {
   currentImageIndex.value = 0;
   isModalOpen.value = true;
@@ -67,12 +77,12 @@ onBeforeUnmount(() => {
 
 <template>
   <div
-    class="group flex flex-col bg-white dark:bg-slate-800/60 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-md hover:shadow-2xl hover:border-emerald-500/50 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
+    class="group h-full flex flex-col bg-white dark:bg-slate-800/70 rounded-2xl border border-slate-200/90 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-emerald-500/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden"
   >
     <!-- Image Preview Container (Clickable to open detail modal) -->
     <div
       @click="openModal"
-      class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-900 cursor-pointer group/img"
+      class="relative overflow-hidden aspect-video bg-slate-100 dark:bg-slate-900 cursor-pointer group/img shrink-0"
     >
       <img
         loading="lazy"
@@ -81,60 +91,81 @@ onBeforeUnmount(() => {
         class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
       />
 
-      <!-- Hover Overlay with Detail Badge -->
+      <!-- Subtle Gradient Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-30 group-hover/img:opacity-10 transition-opacity duration-300"></div>
+
+      <!-- Photo Count Badge (shown if multiple images) -->
       <div
-        class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+        v-if="imageList.length > 1"
+        class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/75 backdrop-blur-md text-white text-[11px] font-semibold border border-white/10 flex items-center gap-1.5 shadow-sm"
+      >
+        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+        <span>{{ imageList.length }} Photos</span>
+      </div>
+
+      <!-- Hover Overlay with Quick View Badge -->
+      <div
+        class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]"
       >
         <span
-          class="px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-900 dark:text-white text-xs font-bold shadow-lg transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300 flex items-center gap-1.5"
+          class="px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-900 dark:text-white text-xs font-bold shadow-lg transform translate-y-2 group-hover/img:translate-y-0 transition-transform duration-300 flex items-center gap-2 border border-white/20 dark:border-slate-700/50"
         >
           <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
           </svg>
-          View Details
+          Quick View
         </span>
       </div>
     </div>
 
     <!-- Card Content -->
-    <div class="flex flex-col flex-1 p-5">
+    <div class="flex flex-col flex-1 p-5 sm:p-6">
       <!-- Tech Stacks -->
-      <div class="flex flex-wrap gap-1.5 mb-3">
+      <div class="flex flex-wrap items-center gap-1.5 min-h-[26px] mb-3">
         <span
-          v-for="stack in project.stacks"
+          v-for="stack in visibleStacks"
           :key="stack"
           class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/50"
         >
           {{ stack }}
+        </span>
+        <span
+          v-if="remainingStacksCount > 0"
+          class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700"
+          :title="project.stacks.slice(3).join(', ')"
+        >
+          +{{ remainingStacksCount }}
         </span>
       </div>
 
       <!-- Title (Clickable) -->
       <h3
         @click="openModal"
-        class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors cursor-pointer"
+        class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors cursor-pointer line-clamp-1"
       >
         {{ project.title }}
       </h3>
 
       <!-- Description Snippet -->
       <p
-        class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1"
+        class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-3 mb-4"
       >
-        {{ snippet }}
+        {{ project.description }}
       </p>
 
       <!-- Action Buttons -->
-      <div class="mt-5 pt-4 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between gap-3">
+      <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between gap-3">
         <!-- View Details Button -->
         <button
           @click="openModal"
           type="button"
-          class="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer"
+          class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer group/btn"
         >
-          <span>Quick Overview</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span>Overview</span>
+          <svg class="w-3.5 h-3.5 text-slate-400 group-hover/btn:text-emerald-500 group-hover/btn:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </button>
@@ -146,7 +177,7 @@ onBeforeUnmount(() => {
           rel="noopener noreferrer"
           class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-all group/link"
         >
-          <span>Visit Live</span>
+          <span>Live Preview</span>
           <svg class="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
@@ -173,7 +204,7 @@ onBeforeUnmount(() => {
             class="relative w-full max-w-3xl bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200/80 dark:border-slate-800 overflow-hidden flex flex-col max-h-[90vh]"
           >
             <!-- Modal Header -->
-            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/60">
               <div class="flex items-center gap-3">
                 <div class="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/50 dark:border-emerald-800/50 text-emerald-600 dark:text-emerald-400">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,7 +223,7 @@ onBeforeUnmount(() => {
               <button
                 @click="closeModal"
                 type="button"
-                class="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors focus:outline-none"
+                class="p-2 rounded-xl text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors focus:outline-none cursor-pointer"
                 aria-label="Close modal"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -202,73 +233,76 @@ onBeforeUnmount(() => {
             </div>
 
             <!-- Modal Content (Scrollable) -->
-            <div class="flex-1 overflow-y-auto p-6 space-y-6">
+            <div class="flex-1 overflow-y-auto p-5 sm:p-6 space-y-6">
               <!-- Image Carousel Container -->
-              <div class="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-slate-100 dark:bg-slate-950 group/carousel">
-                <div class="relative w-full aspect-video flex items-center justify-center overflow-hidden">
-                  <img
-                    :src="imageList[currentImageIndex]"
-                    :alt="`${project.title} screenshot ${currentImageIndex + 1}`"
-                    class="w-full h-full object-cover transition-opacity duration-300"
-                  />
-                </div>
-
-                <!-- Slide Counter Badge (shown if multiple images) -->
-                <div
-                  v-if="imageList.length > 1"
-                  class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/70 backdrop-blur-md text-white text-[11px] font-semibold border border-white/10"
-                >
-                  {{ currentImageIndex + 1 }} / {{ imageList.length }}
-                </div>
-
-                <!-- Navigation Arrows (shown if multiple images) -->
-                <template v-if="imageList.length > 1">
-                  <!-- Prev Arrow -->
-                  <button
-                    @click.stop="prevImage"
-                    type="button"
-                    class="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/60 hover:bg-slate-950/90 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none"
-                    aria-label="Previous image"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-
-                  <!-- Next Arrow -->
-                  <button
-                    @click.stop="nextImage"
-                    type="button"
-                    class="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/60 hover:bg-slate-950/90 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none"
-                    aria-label="Next image"
-                  >
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-
-                  <!-- Indicator Dots -->
-                  <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-950/60 backdrop-blur-md border border-white/10">
-                    <button
-                      v-for="(img, idx) in imageList"
-                      :key="idx"
-                      @click.stop="currentImageIndex = idx"
-                      type="button"
-                      :class="[
-                        'w-2 h-2 rounded-full transition-all',
-                        currentImageIndex === idx
-                          ? 'bg-emerald-400 w-5'
-                          : 'bg-white/50 hover:bg-white'
-                      ]"
-                      :aria-label="`Go to slide ${idx + 1}`"
-                    ></button>
+              <div class="space-y-3">
+                <div class="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm bg-slate-100 dark:bg-slate-950 group/carousel">
+                  <div class="relative w-full aspect-video flex items-center justify-center overflow-hidden">
+                    <img
+                      :src="imageList[currentImageIndex]"
+                      :alt="`${project.title} screenshot ${currentImageIndex + 1}`"
+                      class="w-full h-full object-cover transition-opacity duration-300"
+                    />
                   </div>
-                </template>
+
+                  <!-- Slide Counter Badge (shown if multiple images) -->
+                  <div
+                    v-if="imageList.length > 1"
+                    class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/75 backdrop-blur-md text-white text-[11px] font-semibold border border-white/10"
+                  >
+                    {{ currentImageIndex + 1 }} / {{ imageList.length }}
+                  </div>
+
+                  <!-- Navigation Arrows (shown if multiple images) -->
+                  <template v-if="imageList.length > 1">
+                    <!-- Prev Arrow -->
+                    <button
+                      @click.stop="prevImage"
+                      type="button"
+                      class="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/60 hover:bg-slate-950/90 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none cursor-pointer"
+                      aria-label="Previous image"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+
+                    <!-- Next Arrow -->
+                    <button
+                      @click.stop="nextImage"
+                      type="button"
+                      class="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-950/60 hover:bg-slate-950/90 text-white backdrop-blur-md transition-all opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none cursor-pointer"
+                      aria-label="Next image"
+                    >
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  </template>
+                </div>
+
+                <!-- Mini Thumbnail Bar (if multiple images) -->
+                <div v-if="imageList.length > 1" class="flex items-center gap-2 overflow-x-auto pb-1 max-w-full">
+                  <button
+                    v-for="(img, idx) in imageList"
+                    :key="idx"
+                    @click.stop="currentImageIndex = idx"
+                    type="button"
+                    :class="[
+                      'relative w-16 sm:w-20 aspect-video rounded-lg overflow-hidden border-2 transition-all shrink-0 cursor-pointer',
+                      currentImageIndex === idx
+                        ? 'border-emerald-500 ring-2 ring-emerald-500/30 scale-102'
+                        : 'border-slate-200 dark:border-slate-800 opacity-60 hover:opacity-100 hover:border-slate-400 dark:hover:border-slate-600'
+                    ]"
+                  >
+                    <img :src="img" :alt="`Thumbnail ${idx + 1}`" class="w-full h-full object-cover" />
+                  </button>
+                </div>
               </div>
 
               <!-- Tech Stacks -->
               <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2.5">
                   Technologies Used
                 </h4>
                 <div class="flex flex-wrap gap-2">
@@ -294,11 +328,11 @@ onBeforeUnmount(() => {
             </div>
 
             <!-- Modal Footer -->
-            <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/60">
+            <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-950/60">
               <button
                 @click="closeModal"
                 type="button"
-                class="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                class="px-5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 Close
               </button>
@@ -307,7 +341,7 @@ onBeforeUnmount(() => {
                 :href="project.link"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-md transition-all active:scale-95"
+                class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs shadow-md shadow-emerald-600/20 transition-all active:scale-95 cursor-pointer"
               >
                 <span>Visit Live Project</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -321,3 +355,4 @@ onBeforeUnmount(() => {
     </Teleport>
   </div>
 </template>
+
