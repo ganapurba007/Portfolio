@@ -253,6 +253,25 @@
         "/img/project/eventhub/4.webp",
         "/img/project/eventhub/5.webp"
       ]
+    },
+    {
+      "id": 15,
+      "title": "Learning Management System",
+      "link": "https://ruangterra.my.id",
+      "description": "RuangTerra is a modern, full-featured Learning Management System (LMS) designed to deliver an engaging digital learning experience for schools. Built with Laravel and MySQL, the platform features role-based access control for Admins, Teachers, and Students. It empowers teachers to publish multimedia learning modules, manage essay assignments with feedback scoring, and create real-time timed quizzes with auto-submit. Students can track module progress, participate in interactive discussion threads, and monitor their academic performance through a centralized, responsive dashboard.",
+      "stacks": [
+        "Laravel",
+        "Tailwind",
+        "Alpine.js",
+        "Blade"
+      ],
+      "image": "/img/project/lms/1.webp",
+      "images": [
+        "/img/project/lms/1.webp",
+        "/img/project/lms/2.webp",
+        "/img/project/lms/3.webp",
+        "/img/project/lms/4.webp"
+      ]
     }
   ]
 }

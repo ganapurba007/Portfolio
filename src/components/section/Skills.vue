@@ -107,7 +107,7 @@ import MongoIcon from "../Icon/MongoIcon.vue";
         <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs p-6 hover:shadow-md transition-shadow">
           <div class="flex items-center gap-3 mb-5">
             <span class="w-3 h-3 rounded-full bg-amber-500"></span>
-            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Database & Data Layer</h3>
+            <h3 class="font-bold text-slate-900 dark:text-white text-lg">Database</h3>
           </div>
 
           <div class="grid grid-cols-3 gap-3">
