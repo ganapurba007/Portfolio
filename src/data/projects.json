@@ -197,7 +197,7 @@
     {
       "id": 12,
       "title": "e-Presensi",
-      "link": "https://presensidani.infinityfree.me/",
+      "link": "https://presensi.ruangterra.my.id",
       "description": "Presensi — A school attendance management system built with Laravel 12, featuring student/teacher records, teaching agendas, and real-time attendance tracking (Present/Permission/Sick/Absent/Dispensation). Designed mobile-first with a fully responsive UI that adapts data tables into native-app-style cards on smaller screens.",
       "stacks": [
         "Laravel",
