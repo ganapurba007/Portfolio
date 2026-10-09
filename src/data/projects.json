@@ -272,6 +272,27 @@
         "/img/project/lms/3.webp",
         "/img/project/lms/4.webp"
       ]
+    },
+    {
+      "id": 16,
+      "title": "PT Adhirajasa Karya Mandiri",
+      "link": "https://adhirajasa-compro.vercel.app",
+      "description": "A modern, responsive multi-page company profile web application for a premier general contractor and civil engineering firm (PT Adhirajasa Karya Mandiri). Built using Vue 3, Vite, and Tailwind CSS, the platform features an interactive autoplay Hero Slider, dynamic animated counter stats, a categorized project portfolio showcase with slug-based detail routing, comprehensive services breakdown, corporate history timeline, and an interactive proposal consultation form with client-side Zod validation and 46 Vitest automated unit tests.",
+      "stacks": [
+        "Vue.js",
+        "Tailwind",
+        "JavaScript",
+        "Vitest",
+        "Zod"
+      ],
+      "image": "/img/project/adhirajasa/1.webp",
+      "images": [
+        "/img/project/adhirajasa/1.webp",
+        "/img/project/adhirajasa/2.webp",
+        "/img/project/adhirajasa/3.webp",
+        "/img/project/adhirajasa/4.webp",
+        "/img/project/adhirajasa/5.webp"
+      ]
     }
   ]
 }
