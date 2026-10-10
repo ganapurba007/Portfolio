@@ -6,16 +6,9 @@
       "title": "e-Risalah",
       "link": "https://eparlemenppu.ddns.net",
       "description": "E-RISALAH is a meeting minutes management application developed for the Regional Secretariat of the DPRD (Regional House of Representatives) of Penajam Paser Utara, built to streamline how official meetings are recorded, structured, and archived. By aligning the note-taking process with standard government documentation requirements, it helps staff produce accurate and well-organized minutes, track how meeting decisions translate into concrete follow-up actions, and maintain a reliable, well-structured archive — ultimately supporting more transparent, efficient, and accountable decision-making within the organization.",
-      "stacks": [
-        "Codeigniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["Codeigniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/erisalah/1.png",
-      "images": [
-        "/img/project/erisalah/1.png",
-        "/img/project/erisalah/2.png"
-      ]
+      "images": ["/img/project/erisalah/1.png", "/img/project/erisalah/2.png"]
     },
     {
       "id": 2,
@@ -23,27 +16,16 @@
       "title": "Siyanta",
       "link": "https://eparlemenppu.ddns.net",
       "description": "SIYANTA (Sistem Informasi Pelayanan Tamu / Guest Service Information System) is a visitor management application developed for the Regional Secretariat of the DPRD (Regional House of Representatives) of Penajam Paser Utara, built to streamline how guest visits — whether to the Council members or the Secretariat — are recorded, tracked, and archived. The application captures key visit details such as visitor name, purpose, and time of visit in a structured, easily retrievable format, giving the organization clear, accurate visibility into visitor activity and supporting more transparent, efficient, and accountable guest service management.",
-      "stacks": [
-        "Codeigniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["Codeigniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/siyanta/1.png",
-      "images": [
-        "/img/project/siyanta/1.png",
-        "/img/project/siyanta/2.png"
-      ]
+      "images": ["/img/project/siyanta/1.png", "/img/project/siyanta/2.png"]
     },
     {
       "id": 3,
       "title": "Sinergi",
       "link": "https://sinergippu.penajamkab.go.id/",
       "description": "SINERGI (Sistem Informasi Riset dan Inovasi) is a web-based platform designed to support the management of research and innovation initiatives across government agencies, research institutions, and the public. It serves as a centralized hub for submitting, managing, and tracking research and innovation proposals in real time, enabling structured data collection, faster evaluation, and evidence-based decision-making. By connecting government, research institutions, and the community in one integrated system, SINERGI promotes transparency, efficiency, and collaboration — fostering a more inclusive, technology-driven research ecosystem to support sustainable regional economic and social development.",
-      "stacks": [
-        "Codeigniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["Codeigniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/sinergi/1.webp",
       "images": [
         "/img/project/sinergi/1.webp",
@@ -58,26 +40,16 @@
       "title": "Sinata",
       "link": "https://mmkjogja.net/sinata/sinata",
       "description": "A web-based visitor management system created for a regional government office to handle guest visit reservations efficiently. The system simplifies appointment scheduling and improves administrative coordination.",
-      "stacks": [
-        "CodeIgniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/sinata/1.webp",
-      "images": [
-        "/img/project/sinata/1.webp"
-      ]
+      "images": ["/img/project/sinata/1.webp"]
     },
     {
       "id": 5,
       "title": "Simparpora Boven Digoel",
       "link": "https://yesjogja.net/simparpora_boven_digoel/",
       "description": "An official website developed to provide the public with information about youth and sports activities in Boven Digoel Regency, including news, galleries, announcements, and other related updates.",
-      "stacks": [
-        "CodeIgniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/simparpora/1.webp",
       "images": [
         "/img/project/simparpora/1.webp",
@@ -91,12 +63,7 @@
       "title": "SIM PKK PPU",
       "link": "https://simpkk.penajamkab.go.id/",
       "description": "A centralized information system designed to manage and maintain member and volunteer data for the Family Empowerment and Welfare organization, from regional to national levels. The platform ensures accurate data recording and reporting.",
-      "stacks": [
-        "CodeIgniter",
-        "Bootstrap",
-        "JavaScript",
-        "Rest API"
-      ],
+      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript", "Rest API"],
       "image": "/img/project/simpkk/1.webp",
       "images": [
         "/img/project/simpkk/1.webp",
@@ -110,11 +77,7 @@
       "title": "Sirutama",
       "link": "https://esetda.penajamkab.go.id/sirutama",
       "description": "A web-based reservation system developed for the Penajam local government to manage bookings for meeting rooms, guest houses, and official accommodations. The system enhances scheduling efficiency and resource management.",
-      "stacks": [
-        "CodeIgniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/sirutama/1.webp",
       "images": [
         "/img/project/sirutama/1.webp",
@@ -127,11 +90,7 @@
       "title": "E-Procurement System",
       "link": "https://mmkjogja.net/e-procurement",
       "description": "A web-based procurement management system designed to streamline vendor registration, tender management, and document tracking processes. The platform improves transparency, efficiency, and workflow automation.",
-      "stacks": [
-        "CodeIgniter",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["CodeIgniter", "Bootstrap", "JavaScript"],
       "image": "/img/project/eprocurement/1.webp",
       "images": [
         "/img/project/eprocurement/1.webp",
@@ -144,11 +103,7 @@
       "title": "Portfolio",
       "link": "https://ganapurba.vercel.app",
       "description": "A modern personal portfolio website designed to present development skills, projects, and professional experience. Built with Vue.js, Tailwind CSS, and JavaScript, featuring a responsive and minimalist UI for optimal user experience.",
-      "stacks": [
-        "Vue.js",
-        "Tailwind",
-        "JavaScript"
-      ],
+      "stacks": ["Vue.js", "Tailwind", "JavaScript"],
       "image": "/img/project/portfolio/1.webp",
       "images": [
         "/img/project/portfolio/1.webp",
@@ -163,11 +118,7 @@
       "title": "Human Resource Information System",
       "link": "https://ganahris.infinityfree.me/",
       "description": "A comprehensive Human Resource Information System that streamlines employee management, payroll processing, task distribution, and leave management. Built with a multi-role access system to ensure secure and efficient workflows, using Laravel, Bootstrap, and JavaScript.",
-      "stacks": [
-        "Laravel",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["Laravel", "Bootstrap", "JavaScript"],
       "image": "/img/project/hris/1.webp",
       "images": [
         "/img/project/hris/1.webp",
@@ -181,12 +132,7 @@
       "title": "QMam",
       "link": "https://qmam.infinityfree.me/",
       "description": "A restaurant ordering and management system that enables customers to browse menus, place orders, and complete payments online through Midtrans integration. Features include order management, cart functionality, and role-based access control built with Laravel, Bootstrap, and JavaScript.",
-      "stacks": [
-        "Laravel",
-        "Bootstrap",
-        "JavaScript",
-        "Midtrans"
-      ],
+      "stacks": ["Laravel", "Bootstrap", "JavaScript", "Midtrans"],
       "image": "/img/project/qmam/1.webp",
       "images": [
         "/img/project/qmam/1.webp",
@@ -199,11 +145,7 @@
       "title": "e-Presensi",
       "link": "https://presensi.ruangterra.my.id",
       "description": "Presensi — A school attendance management system built with Laravel 12, featuring student/teacher records, teaching agendas, and real-time attendance tracking (Present/Permission/Sick/Absent/Dispensation). Designed mobile-first with a fully responsive UI that adapts data tables into native-app-style cards on smaller screens.",
-      "stacks": [
-        "Laravel",
-        "Bootstrap",
-        "JavaScript"
-      ],
+      "stacks": ["Laravel", "Bootstrap", "JavaScript"],
       "image": "/img/project/epresensi/1.webp",
       "images": [
         "/img/project/epresensi/1.webp",
@@ -217,12 +159,7 @@
       "title": "Job Tracker",
       "link": "https://jobtracker-portal.vercel.app/",
       "description": "Job Tracker is a modern, responsive web application designed to help job seekers organize, track, and manage their job applications seamlessly. Built with Vue 3 and Tailwind CSS, it features real-time application analytics, application timeline history, automated 2-hour session security, and a 1-click recruiter demo mode.",
-      "stacks": [
-        "Vue.js",
-        "Tailwind",
-        "Laravel",
-        "Rest API"
-      ],
+      "stacks": ["Vue.js", "Tailwind", "Laravel", "Rest API"],
       "image": "/img/project/jobtracker/2.webp",
       "images": [
         "/img/project/jobtracker/1.webp",
@@ -259,12 +196,7 @@
       "title": "Learning Management System",
       "link": "https://ruangterra.my.id",
       "description": "RuangTerra is a modern, full-featured Learning Management System (LMS) designed to deliver an engaging digital learning experience for schools. Built with Laravel and MySQL, the platform features role-based access control for Admins, Teachers, and Students. It empowers teachers to publish multimedia learning modules, manage essay assignments with feedback scoring, and create real-time timed quizzes with auto-submit. Students can track module progress, participate in interactive discussion threads, and monitor their academic performance through a centralized, responsive dashboard.",
-      "stacks": [
-        "Laravel",
-        "Tailwind",
-        "Alpine.js",
-        "Blade"
-      ],
+      "stacks": ["Laravel", "Tailwind", "Alpine.js", "Blade"],
       "image": "/img/project/lms/1.webp",
       "images": [
         "/img/project/lms/1.webp",
@@ -278,13 +210,7 @@
       "title": "PT Adhirajasa Karya Mandiri",
       "link": "https://adhirajasa-compro.vercel.app",
       "description": "A modern, responsive multi-page company profile web application for a premier general contractor and civil engineering firm (PT Adhirajasa Karya Mandiri). Built using Vue 3, Vite, and Tailwind CSS, the platform features an interactive autoplay Hero Slider, dynamic animated counter stats, a categorized project portfolio showcase with slug-based detail routing, comprehensive services breakdown, corporate history timeline, and an interactive proposal consultation form with client-side Zod validation and 46 Vitest automated unit tests.",
-      "stacks": [
-        "Vue.js",
-        "Tailwind",
-        "JavaScript",
-        "Vitest",
-        "Zod"
-      ],
+      "stacks": ["Vue.js", "Tailwind", "JavaScript", "Vitest", "Zod"],
       "image": "/img/project/adhirajasa/1.webp",
       "images": [
         "/img/project/adhirajasa/1.webp",
@@ -292,6 +218,28 @@
         "/img/project/adhirajasa/3.webp",
         "/img/project/adhirajasa/4.webp",
         "/img/project/adhirajasa/5.webp"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Gerayana Rental & Trip",
+      "link": "https://gerayana-rent.vercel.app",
+      "description": "A modern, responsive multi-page vehicle rental and tour package web application for a car, motorbike, and travel provider (Gerayana Rental & Trip). Built using Vue 3, Vite, and Tailwind CSS, the platform features an interactive vehicle & tour booking flow with transparent real-time pricing calculations, a comprehensive fleet catalog with live search and multi-criteria filtering, slug-based vehicle and tour detail pages, a seamless WhatsApp direct reservation generator, interactive FAQ accordions, and 41 Vitest automated unit tests.",
+      "stacks": [
+        "Vue.js",
+        "Tailwind",
+        "JavaScript",
+        "Vue Router",
+        "Vitest",
+        "Zod"
+      ],
+      "image": "/img/project/gerayana/1.webp",
+      "images": [
+        "/img/project/gerayana/1.webp",
+        "/img/project/gerayana/2.webp",
+        "/img/project/gerayana/3.webp",
+        "/img/project/gerayana/4.webp",
+        "/img/project/gerayana/5.webp"
       ]
     }
   ]
