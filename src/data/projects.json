@@ -241,6 +241,28 @@
         "/img/project/gerayana/4.webp",
         "/img/project/gerayana/5.webp"
       ]
+    },
+    {
+      "id": 18,
+      "title": "Candraloka Dental Care",
+      "link": "https://candraloka-dental.vercel.app",
+      "description": "A modern, responsive multi-page dental clinic web application and availability-based online appointment reservation platform for Candraloka Dental Care. Built using Vue 3, Vite, and Tailwind CSS, the platform features an end-to-end 4-step appointment booking flow with real-time slot availability calculations, automatic doctor assignments, leave & schedule integrity checks, a comprehensive dental service catalog with category filtering and slug-based detail pages, a medical doctor directory with weekly practice matrices, an interactive weekly schedule calendar, live embedded Google Maps integration, direct WhatsApp appointment confirmation generator, and 93 Vitest automated unit tests.",
+      "stacks": [
+        "Vue.js",
+        "Tailwind",
+        "JavaScript",
+        "Vue Router",
+        "Vitest",
+        "Zod"
+      ],
+      "image": "/img/project/candraloka/1.webp",
+      "images": [
+        "/img/project/candraloka/1.webp",
+        "/img/project/candraloka/2.webp",
+        "/img/project/candraloka/3.webp",
+        "/img/project/candraloka/4.webp",
+        "/img/project/candraloka/5.webp"
+      ]
     }
   ]
 }
