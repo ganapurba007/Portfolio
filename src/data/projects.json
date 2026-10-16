@@ -223,7 +223,7 @@
     {
       "id": 17,
       "title": "Gerayana Rental & Trip",
-      "link": "https://gerayana-rent.vercel.app",
+      "link": "https://exrent.vercel.app",
       "description": "A modern, responsive multi-page vehicle rental and tour package web application for a car, motorbike, and travel provider (Gerayana Rental & Trip). Built using Vue 3, Vite, and Tailwind CSS, the platform features an interactive vehicle & tour booking flow with transparent real-time pricing calculations, a comprehensive fleet catalog with live search and multi-criteria filtering, slug-based vehicle and tour detail pages, a seamless WhatsApp direct reservation generator, interactive FAQ accordions, and 41 Vitest automated unit tests.",
       "stacks": [
         "Vue.js",
@@ -245,7 +245,7 @@
     {
       "id": 18,
       "title": "Candraloka Dental Care",
-      "link": "https://candraloka-dental.vercel.app",
+      "link": "https://exdental.vercel.app",
       "description": "A modern, responsive multi-page dental clinic web application and availability-based online appointment reservation platform for Candraloka Dental Care. Built using Vue 3, Vite, and Tailwind CSS, the platform features an end-to-end 4-step appointment booking flow with real-time slot availability calculations, automatic doctor assignments, leave & schedule integrity checks, a comprehensive dental service catalog with category filtering and slug-based detail pages, a medical doctor directory with weekly practice matrices, an interactive weekly schedule calendar, live embedded Google Maps integration, direct WhatsApp appointment confirmation generator, and 93 Vitest automated unit tests.",
       "stacks": [
         "Vue.js",
